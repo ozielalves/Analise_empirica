@@ -28,7 +28,7 @@ OBJS = $(addprefix $(objdir)/,binary.o fibonacci.o jsearch.o sequential.o ternar
 all: build main
 
 # Use "make main" to compile the main
-main: analisar
+main: analise
 
 # Use "make build" to build all the modules
 build: binary fibonacci jsearch sequential ternary
@@ -41,10 +41,9 @@ sequential: $(objdir)/sequential.o
 ternary: $(objdir)/ternary.o
 
 # Compiles the main
-analisar: $(srcdir)/main.cpp $(OBJS)
+analise: $(srcdir)/main.cpp $(OBJS)
 	mkdir -p $(bindir)
 	$(CC) $(CFLAGS) $< -o $@
-	#$(CC) $(CFLAGS) -c $< -o $@
 
 # Builds only the binary module
 $(objdir)/binary.o: $(srcdir)/binary.cpp $(incdir)/binary.h
