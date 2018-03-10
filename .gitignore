@@ -1,0 +1,13 @@
+*.exe
+*.o
+*.so
+*.dll
+
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+Thumbs.db
+*.swp
+*.swo
+*.txt
