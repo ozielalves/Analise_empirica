@@ -1,18 +1,11 @@
 #include "sequential.h"
 
-int * ssearch( const int *first , const int *last , const int value )
+int *ssearch( int *first, int *last, int value )
 {
-
-        for( auto i(0) = first ; i <= last ; i++ )
-        {
-                if ( *i == value )
-                {
-                        return 1;
-                {
-        }
-
-
-        return last; // STUB
-
+	for( int *i = first; i <= last; i++ )
+	{
+			if ( *i == value )
+					return i;
+	}
+	return last; // STUB
 }
-

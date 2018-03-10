@@ -13,13 +13,12 @@ objdir = ./obj
 bindir = ./bin
 
 # Objects
-objects = binary.o fibonacci.o jsearch.o sequential.o ternary.o # not this ones, later i can fix it
 
 # Macros
 CC = g++
-CFLAGS = -Wall -g -ggdb -std=c++11 -I. -i$(incdir)
+CFLAGS = -Wall -g -ggdb -std=c++11 -I. -I$(incdir)
 RM = -rm
-OBJS = $(addprefix $(objdir)/,$(objects))
+OBJS = $(addprefix $(objdir)/,binary.o fibonacci.o jsearch.o sequential.o ternary.o)
 
 # Phony targets
 .PHONY: clean cleanobj cleanbin
@@ -44,10 +43,11 @@ ternary: $(objdir)/ternary.o
 # Compiles the main
 analisar: $(srcdir)/main.cpp $(OBJS)
 	mkdir -p $(bindir)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $< -o $@
+	#$(CC) $(CFLAGS) -c $< -o $@
 
 # Builds only the binary module
-$(objdir)/binary.o: $(srcdir)/binary.cpp $(incdir)/util.h
+$(objdir)/binary.o: $(srcdir)/binary.cpp $(incdir)/binary.h
 	mkdir -p $(objdir)
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -78,3 +78,5 @@ cleanobj:
 # Clean all executables
 cleanbin:
 	$(RM) $(bindir)/*
+
+clean: cleanobj cleanbin
