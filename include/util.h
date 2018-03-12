@@ -3,8 +3,14 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
+#include <chrono>
+#include <random>
+
 
 // A simple array print function
-void print_array(int *first, int *last);
+void print_array(int *, int *);
+void print_larray(long int *, long int *);
+
+long int *criarVetor(int);
 
 #endif

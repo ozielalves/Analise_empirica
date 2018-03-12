@@ -19,11 +19,11 @@ bindir = ./bin
 CC = g++
 CFLAGS = -Wall -g -ggdb -std=c++11 -I. -I$(incdir)
 RM = -rm
-OBJS = $(addprefix $(objdir)/,binary.o fibonacci.o jsearch.o sequential.o ternary.o util.o)
+OBJS = $(addprefix $(objdir)/,util.o binary.o fibonacci.o jsearch.o sequential.o ternary.o)
 
 # Phony targets
 .PHONY: clean cleanobj cleanbin
-.PHONY: all main build binary fibonacci jsearch sequential ternary util
+.PHONY: all main build util binary fibonacci jsearch sequential ternary
 
 # Use "make" to execute everything
 all: build main
@@ -35,17 +35,24 @@ main: analise
 build: binary fibonacci jsearch sequential ternary util
 
 # Use "make <name>" to build only the <name> module
+util: $(objdir)/util.o
 binary: $(objdir)/binary.o 
 fibonacci: $(objdir)/fibonacci.o
 jsearch: $(objdir)/jsearch.o
 sequential: $(objdir)/sequential.o
 ternary: $(objdir)/ternary.o
-util: $(objdir)/util.o
 
 # Compiles the main
 analise: $(srcdir)/main.cpp $(OBJS)
 	mkdir -p $(bindir)
-	$(CC) $(CFLAGS) $< -o $(bindir)/$@
+	$(CC) $(CFLAGS) $^ -o $(bindir)/$@
+	#$(CC) $(CFLAGS) $< -o $(bindir)/$@
+
+
+# Builds only the util module
+$(objdir)/util.o: $(srcdir)/util.cpp $(incdir)/util.h
+	mkdir -p $(objdir)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Builds only the binary module
 $(objdir)/binary.o: $(srcdir)/binary.cpp $(incdir)/binary.h
@@ -72,10 +79,6 @@ $(objdir)/ternary.o: $(srcdir)/ternary.cpp $(incdir)/ternary.h
 	mkdir -p $(objdir)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Builds only the ternary module
-$(objdir)/util.o: $(srcdir)/util.cpp $(incdir)/util.h
-	mkdir -p $(objdir)
-	$(CC) $(CFLAGS) -c $< -o $@
 
 # Removes all objects
 cleanobj: 
