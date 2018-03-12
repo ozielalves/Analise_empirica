@@ -2,12 +2,12 @@ Analise Empirica
 
 - Codar funcoes:
 
-1. Busca sequencia interativa
-2. Busca binaria interativa
+1. Busca sequencia interativa [OK]
+2. Busca binaria interativa [OK]
 3. Busca binaria recursiva
-4. Busca ternaria interativa
+4. Busca ternaria interativa [Oziel vai tentar]
 5. Busca ternaria recursiva
 6. Jump search
 7. Busca fibonacci
 
-- Implementar os 100 testes a serem realizados em cada algoritimo
+- Implementar os 100 testes a serem realizados em cada algoritimo [Felipe irá implementar]
