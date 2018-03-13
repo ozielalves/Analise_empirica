@@ -11,6 +11,10 @@
 void print_array(int *, int *);
 void print_larray(long int *, long int *);
 
+// Little func to sort an array by quicksort
+//void sort(long int *, long int *);
+
+
 long int *criarVetor(int);
 
 #endif

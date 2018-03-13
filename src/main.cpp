@@ -6,29 +6,32 @@
 #include <algorithm>
 #include <iterator>
 #include <sstream>
+#include <chrono>
+#include <random>
 
+// Default values
+#define TAM 20		// How many elements the vector will have
+#define TIMES 1		// How many times the program will run
 
 int main(int argc, char **argv) {
-	int tam = 20;
-	for(int i = 0; i < argc; i++){
-		std::cout << argv[i] << std::endl;
-	}
-	if( argc > 0 )
-	{
-		std::string parametro = (std::string) argv[1];
-		tam = std::atoi(parametro.c_str());
-	} 
-	int random_vector[] = {1, 42, 8, 7, 12, 19, 22, 10, 76, 1022, 3, 2, 17, 34, 64, 50};
-	long int *big_random_vector = criarVetor(tam);
-
-	std::cout << "Original Array:" << std::endl;
-	print_array( std::begin(random_vector), std::end(random_vector) );
+	// Creates the vector that later we'll be working on
+	long int *big_random_vector = criarVetor(TAM);
 	
+	// Choose a random index on big_random_vector[] to be the random_element
+	std::mt19937 random (std::chrono::system_clock::now().time_since_epoch().count());
+	long int random_element = *(big_random_vector+random() % TAM);
+
 	std::cout << "Original Random Array" << std::endl;
+	
 	// não funciona (?) // Perguntar a selan
 	//print_larray( std::begin(big_random_vector), std::end(big_random_vector) );
-	
-	print_larray( big_random_vector, big_random_vector+tam );
-	
+
+	std::sort ( big_random_vector, big_random_vector+TAM );
+	print_larray( big_random_vector, big_random_vector+TAM );
+
+	/* Call section for the algorithmns */
+
+
+	free(big_random_vector);
 	return 0;
 }
