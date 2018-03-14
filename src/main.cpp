@@ -25,6 +25,7 @@ int main(int argc, char **argv) {
 	// (in case argv = 0)
 	int array_size 		= TAM;
 	int times_to_run	= 1;
+	int array_increment = 1000000;
 
 	// debug only, uncomment this to show all the args	
 	//showArgs(&argc, argv);
@@ -40,47 +41,56 @@ int main(int argc, char **argv) {
 	bp();
 	std::cout << status << "Running..." << min;
 		
-	// Creates the vector that later we'll be working on
-	long int *big_random_vector = cArray(array_size);
-	if(!big_random_vector)
-		std::cout << error << "Random Array was not created!" << min; 
-
-	/*	
-		Function to print the current working array (debug only)
-		uncomment to use
-	*/
-	//pArray( big_random_vector, big_random_vector+ array_size );
-
-	
-	// Simple declarations of clocks
-	std::chrono::high_resolution_clock::time_point start;
-	std::chrono::high_resolution_clock::time_point stop;
-	std::chrono::nanoseconds timer(0);
-
-	int time = 0;
-	int sum_times = 0;
-
-	for(time = 0; time < times_to_run; time++)
+	// generate at least 25 different array sizes
+	for(int aSize = 1; aSize <= 25; aSize++)
 	{
-		start = std::chrono::high_resolution_clock::now();
+		array_size = array_size + aSize * array_increment;
+		// Creates the vector that later we'll be working on
+		long int *big_random_vector = cArray(array_size);
+		if(!big_random_vector)
+		{
+			std::cout << error << "Random Array was not created!" << min; 
+			free(big_random_vector);
+			return 1;
+		}
 
-		// function pointer here
+		//pArray( big_random_vector, big_random_vector+ array_size );
+		
+		// Simple declarations of clocks
+		std::chrono::high_resolution_clock::time_point start;
+		std::chrono::high_resolution_clock::time_point stop;
+		std::chrono::nanoseconds timer(0);
 
-		// How to call a function:
-		// funcionName( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR );
-		//jsearch( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR);
+		int time = 0;
+		int sum_times = 0;
+		long int iterations = 0;
 
-		stop = std::chrono::high_resolution_clock::now();
+		for(time = 0; time < times_to_run; time++)
+		{
+			start = std::chrono::high_resolution_clock::now();
 
-		// uncomment this if you want to see case by case debug
-		//std::cout << status << "took " << timer.count() << " nanoseconds." << min;
+			// function pointer here
 
-		timer = std::chrono::duration_cast<std::chrono::nanoseconds> (stop - start);
-		sum_times += timer.count();
+			// How to call a function:
+			// funcionName( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR );
+			i_binary( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR, &iterations);
+			//ssearch( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR, &iterations);
+
+			stop = std::chrono::high_resolution_clock::now();
+
+			// uncomment this if you want to see case by case debug
+			//std::cout << status << "took " << timer.count() << " nanoseconds." << min;
+
+			timer = std::chrono::duration_cast<std::chrono::nanoseconds> (stop - start);
+			sum_times += timer.count();
+		}
+		int average = sum_times/time;
+		int average_ite = iterations / time;	
+
+		std::cout << "\e[1;96mAverage of " << array_size << " elements in " << 
+		time << " times:\t" << average << " nanoseconds!\t(" << average_ite << " iterations)" << min;
+
+		free(big_random_vector);
 	}
-	int average = sum_times/time;
-
-	std::cout << "\e[1;96mAverage of " << time << " times: " << average << " nanoseconds!" << min;
-	free(big_random_vector);
 	return 0;
 }

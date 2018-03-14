@@ -10,4 +10,4 @@ Analise Empirica
 6. Jump search [~Em andamento~]
 7. Busca fibonacci
 
-- Implementar os 100 testes a serem realizados em cada algoritimo [Felipe irá implementar]
+- Implementar os 100 testes a serem realizados em cada algoritimo [OK]
