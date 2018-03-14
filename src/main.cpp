@@ -68,7 +68,7 @@ int main(int argc, char **argv) {
 
 		// How to call a function:
 		// funcionName( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR );
-		i_binary( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR);
+		jsearch( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR);
 
 		stop = std::chrono::high_resolution_clock::now();
 
