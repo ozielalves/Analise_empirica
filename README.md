@@ -14,7 +14,7 @@
   - [ ] Busca Fibonacci
 
   ###### Código
-  - [ ] Function pointers
+  - [x] Function pointers
   - [x] Modularização / Makefile
   - [x] Custom outputs
 
