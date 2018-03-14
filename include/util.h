@@ -1,8 +1,7 @@
 #ifndef UTIL_H
 #define UTIL_H
+
 #include <iostream>
-#include <algorithm>
-#include <iterator>
 #include <chrono>
 #include <random>
 #include <iomanip>

@@ -2,12 +2,12 @@
 #include "util.h"
 #include "binary.h"
 #include "sequential.h"
+#include "fibonacci.h"
+#include "jsearch.h"
+#include "ternary.h"
 
 #include <iostream>
 #include <chrono>
-#include <random>
-#include <ctime>
-#include <stdlib.h>
 
 int main(int argc, char **argv) {
 	// Default message headers
