@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <chrono>
+#include <iomanip>
 
 int main(int argc, char **argv) {
 	// Default message headers
@@ -41,11 +42,11 @@ int main(int argc, char **argv) {
 	bp();
 	std::cout << status << "Running..." << min;
 	
-	int n_functions = 1;
+	int n_functions = 2;
 	long int *(*pointer[n_functions])(long int *, long int *, long int, long int *);
 	pointer[0] = &i_binary;
 	//pointer[1] = &ssearch;
-	//pointer[2] = &jsearch;
+	pointer[1] = &jsearch;
 		
 	// generate at least 25 different array sizes
 	for(int aSize = 1; aSize <= 25; aSize++)
@@ -68,41 +69,41 @@ int main(int argc, char **argv) {
 		std::chrono::nanoseconds timer(0);
 
 		int time;
-		int sum_times = 0;
-		long int iterations = 0;
+		int *sum_times = (int *) calloc (n_functions, sizeof(int));
+		long int *iterations = (long int *) calloc (n_functions, sizeof(long int));
 
+
+		std::string timestamp;
 		for(time = 0; time < times_to_run; time++)
 		{
 			int c = 0;
 			for(auto func : pointer){
 				start = std::chrono::high_resolution_clock::now();
-				//std::cout << "Call for function" << func << " here." << std::endl;
-				func( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR, &iterations );
+				func( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR, &iterations[c] );
 				stop = std::chrono::high_resolution_clock::now();
 
 				timer = std::chrono::duration_cast<std::chrono::nanoseconds> (stop - start);
-				sum_times += timer.count();
-				std::cout << "[ " << c++ << " ] "; 
-				int average = sum_times / time;
-				int average_ite = iterations / time;	
-				std::cout << "\e[1;96mAverage of " << array_size << " elements in " << 
-				time << " times:\t" << average << " nanoseconds!\t(" << average_ite << " iterations)" << min;
+				timestamp = "nanoseconds";
+				sum_times[c] += timer.count();
+				c++;
 			}			
-			std::cout << "Saindo do for\n";
-
-
-			// How to call a function:
-			// funcionName( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR );
-			//i_binary( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR, &iterations);
-			//ssearch( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR, &iterations);
-			//jsearch( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR, &iterations );
-
-
-			// uncomment this if you want to see case by case debug
-			//std::cout << status << "took " << timer.count() << " nanoseconds." << min;
-
 		}
 
+		int average;
+		int average_ite;
+		
+		for(int i = 0; i < n_functions; i++){
+			if(!i) {
+				bp();
+				std::cout << "Run no. " << aSize << ":" << std::endl;
+			}	
+			
+			std::cout << "Algorithm " << i+1 << ": ";
+			average = sum_times[i] / time;	
+			average_ite = iterations[i] / time;
+			std::cout << "\e[1;96mAverage of " << std::right << std::setfill(' ') << std::setw(12) << array_size << "\telements in " << 
+			time << " times:\t" << average << " " << timestamp << "!\t(" << average_ite << " iterations)" << min;
+		}
 
 		free(big_random_vector);
 	}
