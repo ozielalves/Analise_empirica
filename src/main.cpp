@@ -7,44 +7,80 @@
 #include <chrono>
 #include <random>
 #include <ctime>
-
-// Default values
-#define TAM 2000000		// How many elements the vector will have
-#define TIMES 1		// How many times the program will run (TODO)
+#include <stdlib.h>
 
 int main(int argc, char **argv) {
-	// Creates the vector that later we'll be working on
-	long int *big_random_vector = criarVetor(TAM);
-	
-	// Choose a random index on big_random_vector[] to be the random_element
-	//std::mt19937 random (std::chrono::system_clock::now().time_since_epoch().count());
-	//long int random_element = *(big_random_vector+random() % TAM);
+	// Default message headers
+	std::string status 	= "\e[1;32mSTATUS: \e[0;0m";
+	std::string error 	= "\n\e[1;4;91mERROR:\e[0;0m ";
+	std::string min 	= "\n\e[0;0m"; 		// make it normal
 
-	std::cout << "STATUS: Original Random Array Created" << std::endl;
+	// An error message if the user leave argv empty
+	if(argc == 1){
+		std::cout << error << "Please, use:\n./bin/analise <array_size> <times>" << min << std::endl;
+		return 1;
+	}	
+
+	// Some argv default variables
+	// (in case argv = 0)
+	int array_size 		= TAM;
+	int times_to_run	= 1;
+
+	// debug only, uncomment this to show all the args	
+	//showArgs(&argc, argv);
+
+
+	if(argc == 3)
+	{
+		array_size = atoi(argv[1]);
+		std::cout << status << "array_size = " << array_size << min;
+		times_to_run = atoi(argv[2]);
+		std::cout << status << "times_to_run = " << times_to_run << min;
+	}
+	bp();
+	std::cout << status << "Running..." << min;
+		
+	// Creates the vector that later we'll be working on
+	long int *big_random_vector = cArray(array_size);
+	if(!big_random_vector)
+		std::cout << error << "Random Array was not created!" << min; 
 
 	/*	
 		Function to print the current working array (debug only)
 		uncomment to use
 	*/
-	//print_larray( big_random_vector, big_random_vector+TAM );
+	//pArray( big_random_vector, big_random_vector+ array_size );
 
-	std::cout << "STATUS: Starting clock!" << std::endl;
-	std::cout << std::setfill('-') << std::setw(50) << "" << std::endl; 
-	clock_t start_time = clock();
-
-	/* Call section for the algorithmns */
 	
-	ssearch( big_random_vector, big_random_vector+TAM, 39000);	
-	//i_binary( big_random_vector, big_random_vector+TAM, (long int)-2);
+	// Simple declarations of clocks
+	std::chrono::high_resolution_clock::time_point start;
+	std::chrono::high_resolution_clock::time_point stop;
+	std::chrono::nanoseconds timer(0);
 
-	/* End of call section */
+	int time = 0;
+	int sum_times = 0;
 
-	clock_t elapsed = clock() - start_time; // with this we will have how much time the algorithm took (in ms)
-	
+	for(time = 0; time < times_to_run; time++)
+	{
+		start = std::chrono::high_resolution_clock::now();
 
-	std::cout << std::setfill('-') << std::setw(50) << "" << std::endl; 
-	std::cout << "STATUS: The algorithm took " << std::dec << elapsed << " ms." << std::endl;
+		// function pointer here
 
+		// How to call a function:
+		// funcionName( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR );
+		i_binary( big_random_vector, big_random_vector + array_size, (long int) SEARCH_FOR);
+
+		stop = std::chrono::high_resolution_clock::now();
+
+		// uncomment this if you want to see case by case debug
+		//std::cout << status << "took " << timer.count() << " nanoseconds." << min;
+
+		timer = std::chrono::duration_cast<std::chrono::nanoseconds> (stop - start);
+		sum_times += timer.count();
+	}
+	int average = sum_times/time;
+
+	std::cout << "\e[1;96mAverage of " << time << " times: " << average << " nanoseconds!" << min;
 	free(big_random_vector);
 	return 0;
 }
