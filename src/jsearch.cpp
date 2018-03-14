@@ -9,13 +9,13 @@ long int *jsearch( long int *first, long int *last, long int value, long int *co
 	
 	for( auto k(1); (k * m) < n; k++ )
 	{
-		*counter++;
+		*counter += 1;
 		if( value == *(first + k * m) )
 			return first + k * m;
 		if( *(first + k * m) > value )
 		{
 			// ponteiros passados - analisar
-			auto result = ssearch( (first + (k - 1) * m), ((first + k * m)), value);
+			auto result = ssearch( (first + (k - 1) * m), ((first + k * m)), value, counter);
 		
 			if( result != (first + k * m) )
 				return result;
