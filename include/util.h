@@ -5,16 +5,23 @@
 #include <iterator>
 #include <chrono>
 #include <random>
+#include <iomanip>
+
+// Default values
+#define TAM 2000000		// How many elements the vector will have
+#define SEARCH_FOR -2
 
 
 // A simple array print function
-void print_array(int *, int *);
-void print_larray(long int *, long int *);
+void pArray( long int *, long int * );
 
-// Little func to sort an array by quicksort
-//void sort(long int *, long int *);
+// A function to create "random" arrays
+long int *cArray( int );
 
+// A simple args show function
+void showArgs( int *argc, char **argv );
 
-long int *criarVetor(int);
+// a function to simply break page
+void bp();
 
 #endif

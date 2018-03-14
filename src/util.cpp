@@ -1,41 +1,34 @@
 #include "util.h"
 
-void print_array(int *first, int *last)
-{
-	std::cout << "[ ";
-	std::copy(first, last, std::ostream_iterator<int>(std::cout, " "));
-	std::cout << "]" << std::endl;
-}
-
-void print_larray(long int *first, long int *last)
+void pArray(long int *first, long int *last)
 {
 	std::cout << "[ ";
 	std::copy(first, last, std::ostream_iterator<long int>(std::cout, " "));
 	std::cout << "]" << std::endl;
 }
 
-int checkNumber(long int *first, long int *last, long int number)
-{
-	int tripped = 0;
-	for(long int *i = first; i < last; i++){
-		if(*i == number) tripped = 1;	
-	}
-	return tripped;
-}
-
-long int *criarVetor(int n)
+long int *cArray(int n)
 {
 	long int *vetor = (long int *) calloc (n, sizeof(long int));
-	int k = 0;
-	for(int i = 0; i < n;)
+	for(int i = 0, k = 0; i < n;)
 	{
-		std::mt19937 random (std::chrono::system_clock::now().time_since_epoch().count());
-		long int pseudo_random = random() % 3 + 1;		
-		vetor[i++] = (long int)k + pseudo_random; 
+		//std::mt19937 random (std::chrono::system_clock::now().time_since_epoch().count());
+		//long int pseudo_random = random() % 3 + 1;		
+		vetor[i++] = (long int)k; 
 		k += 5;
-		//int tripped = checkNumber(vetor, vetor+i, pseudo_random);	
-		//if(!tripped) vetor[i++] = pseudo_random;
 	}
-	std::cout << "Vector filled with sucess!" << std::endl;
 	return vetor;
+}
+
+void showArgs(int *argc, char **argv)
+{
+	std::cout << "argc = " << *argc << std::endl;
+	for(int i = 0; i < *argc; i++)
+	{
+		std::cout << "argv[" << i << "] = " << argv[i] << std::endl; 
+	}
+}
+void bp(void)
+{
+	std::cout << std::setfill('-') << std::setw(50) << "" << std::endl; 
 }
