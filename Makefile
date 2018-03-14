@@ -46,7 +46,7 @@ ternary: $(objdir)/ternary.o
 analise: $(srcdir)/main.cpp $(OBJS)
 	mkdir -p $(bindir)
 	$(CC) $(CFLAGS) $^ -o $(bindir)/$@
-	#$(CC) $(CFLAGS) $< -o $(bindir)/$@
+	#$(CC) $(CFLAGS) $^ -o $@
 
 
 # Builds only the util module

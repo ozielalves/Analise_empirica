@@ -1,8 +1,14 @@
 #include "sequential.h"
 
-int *ssearch( int *first, int *last, int value )
+long int *ssearch( long int *first, long int *last, long int value )
 {
-	for( int *i = first; i <= last; i++ )
-		if ( *i == value ) return i;
+	for( long int *i = first; i < last; i++ ){
+		if ( *i == value )
+		{
+			std::cout << "Elemento " << value << " encontrado, posição " << std::hex << i << std::endl;
+			return i;
+		}
+	}
+	std::cout << "Não conseguimos encontrar o elemento!" << std::endl;
 	return last; // STUB
 }

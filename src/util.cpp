@@ -26,12 +26,16 @@ int checkNumber(long int *first, long int *last, long int number)
 long int *criarVetor(int n)
 {
 	long int *vetor = (long int *) calloc (n, sizeof(long int));
+	int k = 0;
 	for(int i = 0; i < n;)
 	{
 		std::mt19937 random (std::chrono::system_clock::now().time_since_epoch().count());
-		long int pseudo_random = random() % 100;		
-		int tripped = checkNumber(vetor, vetor+i, pseudo_random);	
-		if(!tripped) vetor[i++] = pseudo_random;
+		long int pseudo_random = random() % 3 + 1;		
+		vetor[i++] = (long int)k + pseudo_random; 
+		k += 5;
+		//int tripped = checkNumber(vetor, vetor+i, pseudo_random);	
+		//if(!tripped) vetor[i++] = pseudo_random;
 	}
+	std::cout << "Vector filled with sucess!" << std::endl;
 	return vetor;
 }

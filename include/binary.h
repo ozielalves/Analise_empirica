@@ -5,7 +5,6 @@
 #include <iterator>
 
 // Iteractive binary search
-int *i_binary(int *first, int *last, int value);
-
+long int *i_binary(long int *first, long int *last, long int value);
 
 #endif
