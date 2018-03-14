@@ -12,7 +12,7 @@ long int *jsearch( long int *first, long int *last, long int value, long int *co
 	
    for( auto k(1); k*m < n; k++)
    {
-	   *counter++;
+	*counter++;
        if( value == *(first + k*m) )
        {	
 		   return (first + k*m);
@@ -20,7 +20,7 @@ long int *jsearch( long int *first, long int *last, long int value, long int *co
        if( *(first + k*m) > value )
        {
 	// ponteiros passados - analisar
-	auto result = lsearch( (first + (k-1)*m), ((first + k*m)), value);
+	auto result = ssearch( (first + (k-1)*m), ((first + k*m)), value);
 		if(result != ((first + k*m)))
 		{
 			 return result;
@@ -29,7 +29,6 @@ long int *jsearch( long int *first, long int *last, long int value, long int *co
        }
 	if( *(first + k*m) < value )
 	{
-		//first = (first + k*m);
 		continue;
 	}
    }
