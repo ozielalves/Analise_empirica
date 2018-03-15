@@ -9,11 +9,9 @@ void pArray(long int *first, long int *last)
 
 long int *cArray(int n)
 {
-	long int *vetor = (long int *) calloc (n, sizeof(long int));
+	long int *vetor = new long int[n]; 
 	for(int i = 0, k = 0; i < n;)
 	{
-		//std::mt19937 random (std::chrono::system_clock::now().time_since_epoch().count());
-		//long int pseudo_random = random() % 3 + 1;		
 		vetor[i++] = (long int)k; 
 		k += 5;
 	}
