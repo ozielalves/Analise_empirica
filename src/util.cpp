@@ -1,4 +1,5 @@
 #include "util.h"
+#include <iterator>
 
 void pArray(long int *first, long int *last)
 {
