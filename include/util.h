@@ -24,4 +24,6 @@ void showArgs( int *argc, char **argv );
 // a function to simply break page
 void bp();
 
+void printResults(int aSize, int array_size, long int time, int n_functions, long int *sum_times, long int *iterations );
+
 #endif

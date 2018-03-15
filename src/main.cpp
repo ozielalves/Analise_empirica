@@ -19,8 +19,8 @@ int main(int argc, char **argv) {
 	std::string min 	= "\n\e[0;0m"; 		// make it normal
 
 	long int array_size, times_to_run;
-	long int array_increment = pow(10, 6);
-	int number_of_arrays = 25;
+	long int array_increment = pow(10, 7);
+	int number_of_arrays = 5;
 	
 	// showArgs(&argc, argv);
 
@@ -53,13 +53,20 @@ int main(int argc, char **argv) {
 	pointer[1] = &r_binary;
 	pointer[2] = &jsearch;
 	pointer[3] = &ssearch;
-		
+
+	/*
+	 *
+	 * Here, the program starts!
+	 *    
+	 */
+
+	// Creates the vector that later we'll be working on
+	long int *big_random_vector = cArray(array_size + (number_of_arrays * array_increment));
+
 	// Generate at least <number_of_arrays> different array sizes
 	for(int aSize = 1; aSize <= number_of_arrays; aSize++) {
-		array_size += array_increment;
+		//array_size += array_increment;
 
-		// Creates the vector that later we'll be working on
-		long int *big_random_vector = cArray(array_size);
 		
 		if(!big_random_vector) {
 			std::cout << error << "Random Array was not created!" << min; 
@@ -71,25 +78,23 @@ int main(int argc, char **argv) {
 		std::chrono::steady_clock::time_point start;
 		std::chrono::steady_clock::time_point stop;
 
-		int time;
+
 		// Arrays that will have the algorithms times and iterations
 		long int *sum_times = new long int[n_functions]; 
 		long int *iterations = new long int[n_functions];
 
-		// initializer 
+		// Initializer for sum_times & iterations 
 		for(int i=0; i < n_functions; i++){
 			sum_times[i] = 0;
 			iterations[i] = 0;
 		}
 
-		//long int *sum_times = (long int*) calloc (n_functions, sizeof(long int));
-		//long int *iterations = (long int*) calloc (n_functions, sizeof(long int));
-
-
-		// Just a timestamp for making easy if we want to change the time
-		std::string timestamp;
-
-		for(time = 0; time < times_to_run; time++) {
+		/*
+		* This will test the algorithm <times_to_run> times
+		* and then will store all the data on sum_times[algorithm_number] & iterations[algorithm_number]
+		* *without the average, only the sum
+		*/
+		for(int time = 0; time < times_to_run; time++) {
 			int c = 0;
 			for(auto run_algorithm : pointer) {
 				start = std::chrono::steady_clock::now();
@@ -102,39 +107,18 @@ int main(int argc, char **argv) {
 
 				auto timer = (stop - start);
 
-				timestamp = "nanoseconds"; // make it the same
 				sum_times[c++] += std::chrono::duration <double, std::nano> (timer).count();
 			}			
 		}
 
-		int average;
-		int average_ite;
+		// Function to print all the results
+		printResults(aSize, array_size, times_to_run, n_functions, sum_times, iterations);
 		
-		// A print for-loop to show the results (time, iterations..)
-		for(int i = 0; i < n_functions; i++){
-			// Just a simple divisor to make things pretty
-			if(!i) {
-				bp();
-				std::cout << "Run no. " << aSize << ":" << std::endl;
-			}	
-			
-			std::cout << "Algorithm " << i+1 << ": ";
-
-			average = sum_times[i] / time;	
-			average_ite = iterations[i] / time;
-
-			std::cout << "\e[1;96mAverage of " << std::right << std::setfill(' ') <<
-			std::setw(12) << array_size << "\telements in " << time << " times:\t" <<
-			average << " " << timestamp << "!\t(" << average_ite << " iterations)" << min;
-		}
-
-		//free(sum_times);
-		//free(iterations);
-		//free(big_random_vector);
 		delete[] sum_times;
 		delete[] iterations;
-		delete[] big_random_vector;
+		array_size += array_increment;
 	}
+	delete[] big_random_vector;
 
 	// It's over :D
 	return 0;
