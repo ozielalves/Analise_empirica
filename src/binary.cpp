@@ -33,7 +33,6 @@ long int *i_binary( long int *first, long int *last, long int value, long int *c
 
 long int *r_binary( long int *first, long int *last, long int value, long int *counter )
 {
-<<<<<<< HEAD
 	*counter+=1;
 	long int *last_backup = last;
 	long int *middle = first + (last - first)/(long int)2;	
