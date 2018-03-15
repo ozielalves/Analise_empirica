@@ -6,4 +6,7 @@
 // Iteractive binary search
 long int *i_binary(long int *first, long int *last, long int value, long int *counter);
 
+// Recursive binary search
+long int *r_binary(long int *first, long int *last, long int value, long int *counter);
+
 #endif

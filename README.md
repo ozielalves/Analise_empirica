@@ -7,7 +7,7 @@
 
 #### Implementações
   ###### Buscas
-  - [ ] Busca Binária (Iterativa / Recursiva)
+  - [x] Busca Binária (Iterativa / Recursiva)
   - [x] Busca Sequencial (Iterativa)
   - [ ] Busca Ternária (Iterativa / Recursiva)
   - [x] Jump Search

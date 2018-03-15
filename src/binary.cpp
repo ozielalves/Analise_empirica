@@ -33,24 +33,24 @@ long int *i_binary( long int *first, long int *last, long int value, long int *c
 
 long int *r_binary( long int *first, long int *last, long int value, long int *counter )
 {
-	*counter+=1;
+	//*counter+=1;
+	(*counter) ++;
+	//std::cout << "Contando:" << *counter << std::endl;
 	long int *last_backup = last;
 	long int *middle = first + (last - first)/(long int)2;	
 	
 	if(*middle == value){
-	// if value *is* middle
+		// if value *is* middle
 		return middle;
 	} else {
 		if(*middle > value){
-		// if the value is in smaller than middle
+			// if the value is in smaller than middle
 	    	last = middle;
 	    }else{
-		 // if the value is bigger than middle
+			 // if the value is bigger than middle
 		    first = middle + 1;
-			// sem os *
 			return r_binary( first, last, value, counter );
 		}
 	}
 	return last_backup;
 }	
-	

@@ -47,11 +47,12 @@ int main(int argc, char **argv) {
 	 * 
 	 * And PLEASE, do not forget to update n_functions variable
 	 */
-	int n_functions = 3;
+	int n_functions = 4;
 	long int *(*pointer[n_functions])(long int *, long int *, long int, long int *);
 	pointer[0] = &i_binary;
-	pointer[1] = &jsearch;
-	pointer[2] = &ssearch;
+	pointer[1] = &r_binary;
+	pointer[2] = &jsearch;
+	pointer[3] = &ssearch;
 		
 	// Generate at least <number_of_arrays> different array sizes
 	for(int aSize = 1; aSize <= number_of_arrays; aSize++) {
@@ -74,6 +75,15 @@ int main(int argc, char **argv) {
 		// Arrays that will have the algorithms times and iterations
 		long int *sum_times = new long int[n_functions]; 
 		long int *iterations = new long int[n_functions];
+
+		// initializer 
+		for(int i=0; i < n_functions; i++){
+			sum_times[i] = 0;
+			iterations[i] = 0;
+		}
+
+		//long int *sum_times = (long int*) calloc (n_functions, sizeof(long int));
+		//long int *iterations = (long int*) calloc (n_functions, sizeof(long int));
 
 
 		// Just a timestamp for making easy if we want to change the time
@@ -118,9 +128,12 @@ int main(int argc, char **argv) {
 			average << " " << timestamp << "!\t(" << average_ite << " iterations)" << min;
 		}
 
-		free(sum_times);
-		free(iterations);
-		free(big_random_vector);
+		//free(sum_times);
+		//free(iterations);
+		//free(big_random_vector);
+		delete[] sum_times;
+		delete[] iterations;
+		delete[] big_random_vector;
 	}
 
 	// It's over :D
