@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 	// showArgs(&argc, argv);
 
 	// An error message if the user leave argv empty
-	if(argc){
+	if(argc == 1){
 		std::cout << error << "Please, use:\n./bin/analise <array_size> <times>" << min << std::endl;
 		return 1;
 	} else {
@@ -43,11 +43,11 @@ int main(int argc, char **argv) {
 	 * 
 	 * And PLEASE, do not forget to update n_functions variable
 	 */
-	int n_functions = 2;
+	int n_functions = 3;
 	long int *(*pointer[n_functions])(long int *, long int *, long int, long int *);
 	pointer[0] = &i_binary;
 	pointer[1] = &jsearch;
-	//pointer[2] = &ssearch;
+	pointer[2] = &ssearch;
 		
 	// generate at least 25 different array sizes
 	for(int aSize = 1; aSize <= number_of_arrays; aSize++) {
@@ -110,7 +110,7 @@ int main(int argc, char **argv) {
 		}
 
 		// begin of the comunism section, where everybody is free to do what they want
-		free(pointer);
+		//free(pointer);
 		free(sum_times);
 		free(iterations);
 		free(big_random_vector);
