@@ -33,7 +33,8 @@ long int *r_ternary( long int *first, long int *last, long int value, long int *
 		}else{ //if value > *right
 			first = right;
 				return r_ternary( first, last, value, counter );
-		}
+			}
+	}
 	return last_backup;	
 }
 
