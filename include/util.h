@@ -2,6 +2,7 @@
 #define UTIL_H
 
 #include <iostream>
+#include <fstream>
 #include <chrono>
 #include <random>
 #include <iomanip>
@@ -24,6 +25,9 @@ void showArgs( int *argc, char **argv );
 // a function to simply break page
 void bp();
 
+// A function to pretty print all the results
 void printResults(int aSize, int array_size, long int time, int n_functions, long int *sum_times, long int *iterations );
+
+void generateResults(int i, std::ofstream &file, int aSize, int array_size, long int time, int n_functions, long int *sum_times, long int *iterations );
 
 #endif

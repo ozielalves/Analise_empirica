@@ -7,34 +7,46 @@
 #include "ternary.h"
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <chrono>
 #include <iomanip>
 #include <cmath>
 #include <new>
 
+#define DATADIR "data/"
+
 int main(int argc, char **argv) {
+	system("clear");
+	system("rm -rf data/*.txt");
+	
 	// Default message headers
 	std::string status 	= "\e[1;32mSTATUS: \e[0;0m";
 	std::string error 	= "\n\e[1;4;91mERROR:\e[0;0m ";
 	std::string min 	= "\n\e[0;0m"; 		// make it normal
 
 	long int array_size, times_to_run;
-	long int array_increment = pow(10, 7);
-	int number_of_arrays = 5;
+	long int array_increment = pow(10, 6);
+	int number_of_arrays = 25;
 	
 	// showArgs(&argc, argv);
 
 	// An error message if the user leave argv empty
-	if(argc != 3){
-		std::cout << error << "Please, use:\n./bin/analise <array_size> <times>" << min << std::endl;
+	if(argc != 5){
+		std::cout << error << "Please, use:" << std::endl;
+		std::cout << "./bin/analise <array_size> <times> <increment(10 ^ x)> <number_of_arrays>";
+		std::cout << min << std::endl;
 		return 1;
 	} else {
 		array_size = atol(argv[1]);
 		std::cout << status << "array_size = " << array_size << min;
 		times_to_run = atol(argv[2]);
 		std::cout << status << "times_to_run = " << times_to_run << min;
-		//array_increment = atol(argv[3]);
-		//std::cout << status << "array_increment = " << array_increment << min;
+		array_increment = pow(10, atol(argv[3]));
+		std::cout << status << "array_increment = " << array_increment << min;
+		number_of_arrays = atol(argv[4]);
+		std::cout << status << "number_of_arrays = " << number_of_arrays << min;
+		
 	}
 
 	bp();
@@ -54,20 +66,17 @@ int main(int argc, char **argv) {
 	pointer[2] = &jsearch;
 	pointer[3] = &ssearch;
 
-	/*
-	 *
-	 * Here, the program starts!
-	 *    
-	 */
+	std::string names[n_functions];
+	names[0] = "Iterative Binary";
+	names[1] = "Recursive Binary";
+	names[2] = "Jump Search";
+	names[3] = "Sequential Search";
 
 	// Creates the vector that later we'll be working on
 	long int *big_random_vector = cArray(array_size + (number_of_arrays * array_increment));
 
 	// Generate at least <number_of_arrays> different array sizes
 	for(int aSize = 1; aSize <= number_of_arrays; aSize++) {
-		//array_size += array_increment;
-
-		
 		if(!big_random_vector) {
 			std::cout << error << "Random Array was not created!" << min; 
 			free(big_random_vector);
@@ -94,8 +103,12 @@ int main(int argc, char **argv) {
 		* and then will store all the data on sum_times[algorithm_number] & iterations[algorithm_number]
 		* *without the average, only the sum
 		*/
+
 		for(int time = 0; time < times_to_run; time++) {
 			int c = 0;
+			// for-loop thru function pointer array, 
+			// each for, one of the correspondent algorithms
+			// gets to run thru run_algorithm
 			for(auto run_algorithm : pointer) {
 				start = std::chrono::steady_clock::now();
 
@@ -104,16 +117,32 @@ int main(int argc, char **argv) {
 				// --- TIMER ENDS HERE --- //
 
 				stop = std::chrono::steady_clock::now();
-
 				auto timer = (stop - start);
 
-				sum_times[c++] += std::chrono::duration <double, std::nano> (timer).count();
+				sum_times[c] += std::chrono::duration <double, std::nano> (timer).count();
+
+
+				c++;
 			}			
 		}
 
+
+		for(int i = 0; i < n_functions; i++){
+			std::stringstream filepath;
+
+			filepath << DATADIR << "alg_" << names[i] << ".txt";
+			std::ofstream outFile(filepath.str(), std::ios::app);	
+			generateResults(i,outFile, aSize, array_size, times_to_run, n_functions, sum_times, iterations);
+			outFile.close();
+		}
+		
+
 		// Function to print all the results
 		printResults(aSize, array_size, times_to_run, n_functions, sum_times, iterations);
-		
+
+		// Put the stream here
+
+
 		delete[] sum_times;
 		delete[] iterations;
 		array_size += array_increment;

@@ -39,23 +39,35 @@ void printResults(int aSize, int array_size, long int time, int n_functions, lon
 			// Just a simple divisor to make things pretty
 			if(!i) {
 				bp();
-				std::cout << "#" << aSize << ":\t";
-				std::cout << "Array size\t";
-				std::cout << "Times\t";
-				std::cout << "Average time\t";
-				std::cout << "Iterations" << std::endl;
+				std::cout << std::setw(3) << std::right << "\e[34m#" << aSize << "\e[0m\t"; // 3
+				std::cout << std::setw(10) << std::left << "Array size\t"; // 10
+				std::cout << std::setw(5) << std::left << "Times\t"; // 5
+				std::cout << std::setw(13) << std::left << "Average time\t"; // 12
+				std::cout << std::setw(10) << std::left << "Iterations" << std::endl;
+				bp();
 			}	
 			
-			std::cout << i+1 << ":";
+			std::cout << "" << "~" << std::right << std::setw(2) << std::setfill(' ') << i+1 << ":";
 
 			long int average = *(sum_times+i) / time;	
 			long int average_ite = *(iterations+i) / time;
 
-			std::cout << std::fixed;
-			std::cout << "\e[1;96m\t" << std::left << std::setfill(' ') << std::setw(12);
+			std::cout << std::fixed << "\e[1;96m\t"; // turn 'bold' and 'cyan' ascii options on
+			std::cout << std::left << std::setfill(' ') << std::setw(12); // defines the align and fill
+
 			std::cout << array_size;
-			std::cout << "\t" << time << "\t" << std::dec;
+			std::cout << "\t" << time << "\t";
 			std::cout << std::setprecision(10) << average/(long double)1000000000;
-			std::cout << "s" << "\t" << average_ite << "\n\e[0;0m";
+			std::cout << "s" << "\t";
+			std::cout << average_ite;
+
+			std::cout << "\n\e[0;0m"; // set bold and cyan to normal again
 		}
+}
+
+void generateResults(int i, std::ofstream &file, int aSize, int array_size, long int time, int n_functions, long int *sum_times, long int *iterations){
+	long int average = *(sum_times + i) / time;
+	long int average_ite = *(iterations + i) / time;
+	file << array_size << " " << time << " " << std::fixed << std::setprecision(10) <<average/(long double)1000000000 << " " << average_ite << std::endl;
+	//file << array_size << " " << std::fixed << std::setprecision(10) << average/(long double)1000000000 << std::endl;
 }
