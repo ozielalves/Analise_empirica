@@ -14,9 +14,13 @@
   - [ ] Busca Fibonacci
 
   ###### Código
-  - [x] Function pointers
-  - [x] Modularização / Makefile
-  - [x] Custom outputs
+  - [x] Códigos comentados
+  - [x] Implementação de function pointers
+  - [x] Modularização
+  - [x] Makefile
+  - [x] Realce de cores nos outputs
+  - [x] Plotagem de gráficos
+  - [x] Outputs .dat com dados gerados
 
 
 #### Objetivos
@@ -148,3 +152,20 @@ _Obs:_ Vale lembrar que o programa pode ficar **bem** pesado caso dê um increme
 		<!--Iterações x Tamanho-->
 	<!--Opnião-->
 	
+### Comparações Gerais
+<!--Breve explicação-->
+	#### Tempo x Iterações
+	#### Tempo x Tamanho
+	#### Iterações x Tamanho
+
+<!--Conclusões finais-->
+
+## Condições de Testes
+### Informações sobre a maquina utilizada
+	<!--Maquina utilizada-->
+### Informações sobre os parametros utilizados
+	<!--Parametros utilizados-->
+### Softwares utilizados
+	<!--Softwares utilizados-->
+### Dependências necessárias
+	<!--Dependências-->
