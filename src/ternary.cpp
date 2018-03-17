@@ -1,4 +1,5 @@
 #include "ternary.h"
+#include <iostream>
 
 long int *i_ternary( long int *first, long int *last, long int value, long int *counter )
 {
@@ -6,7 +7,7 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 	long int *left;
 	long int *right;
 
-	while(first != last)
+	while(first < last)
 	{
 		(*counter) += 1;
 		left = first + ( last - first )/(long int)3;
