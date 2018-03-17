@@ -6,13 +6,13 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 	long int *left;
 	long int *right;
 
-	while(first != last)
+	while(first < last)
 	{
 		(*counter) += 1;
-		long int *left = first + ( first - last )/(long int)3;
-		long int *right = left + ( first - last )/(long int)3;
+		left = first + ( last - first )/(long int)3;
+		right = left + ( last - first )/(long int)3;
 
-		if(value >= *first and value < *left)
+		if( /* value >= *first and */ value < *left)
 		{
 			last = left - 1;	
 		}
@@ -23,16 +23,17 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 		else if(value > *left and value < *right)
 		{
 			first = left + 1;
-			last = right - 1;	
+			last = right;	
 		}
 		else if(value == *right)
 		{
 			return right;	
 		}
-		else if(value > *right and value < *last)
+		else
 		{
 			first = right + 1;	
 		}
+	
 	}
 
 	(*counter) += 1;
@@ -48,8 +49,8 @@ long int *r_ternary( long int *first, long int *last, long int value, long int *
 	}
 	
 	long int *last_backup = last;
-	long int *left = first + ( first - last )/(long int)3;
-	long int *right = left + ( first - last )/(long int)3;
+	long int *left = first + ( last - first )/(long int)3;
+	long int *right = left + ( last - first )/(long int)3;
 	
 	//for the left pointer
 	if(*left == value)
@@ -66,13 +67,13 @@ long int *r_ternary( long int *first, long int *last, long int value, long int *
 		last = left - 1; // left was already tested before
 		return r_ternary( first, last, value, counter );	
 	}
-	else if(value > *left and x < *right)
+	else if(value > *left and value < *right)
 	{
 		first = left + 1;
 		last = right - 1;
 		return r_ternary( first, last, value, counter );	
 	}
-	else if(value > *right and value < *last)
+	else
 	{
 		first = right + 1;
 		return r_ternary( first, last, value, counter );	
