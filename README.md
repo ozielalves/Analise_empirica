@@ -11,7 +11,24 @@ Analisar e avaliar o comportamento **assintótico** dos algoritmos em relação 
 ## Instruções de uso
 
 ### Dependências
-<!-- Dependências aqui -->
+#### python3, python3-pip, python3-tk
+É necessário para rodar o script de plotagem dos dados.
+```bash
+# Ubuntu 16.04 LTS
+sudo apt-get install python3 python3-pip python3-tk
+```
+#### Matplotlib
+É necessário para exibir os gráficos gerados pelo script de plotagem.
+```bash
+# Ubuntu 16.04 LTS
+pip3 install matplotlib
+```
+#### g++ Compiler
+É necessário para a compilação do programa, visto que ele é feito em c++.
+```bash
+# Ubuntu 16.04 LTS
+sudo apt-get install g++
+```
 
 ### Compilação
 Para compilar, basta usar o seguintes comandos na raiz do repositório:
@@ -65,6 +82,17 @@ Teremos um programa que irá analisar 100 vezes um conjunto constituido com:
 E armazenará a média de tempo e iterações das 100 vezes, gerando gráficos para interpretação posterior. 
 
 _Obs:_ Vale lembrar que o programa pode ficar **bem** pesado caso o incremento estipulado seja muito forte (acima de 6, por exemplo) dada a função crescimento.
+
+#### Plotagem de gráficos
+O programa realiza a plotagem de gráficos utilizando um script em python 3 se aproveitando da lib matplotlib.
+Para utilizar o script, basta na raiz do repositório executar:
+```bash
+python3 src/plot.py [A] [I] [Title]
+```
++ [A] - **_Algoritmos_**
+É um parâmetro composto por uma string bin
++ [I] - 
++ [Title] - 
 
 ### Quanto à organização das amostras
 É estipulado como parâmetro de execução o tamanho inicial do conjunto [TIC], o número de incrementos [NI] que irão acontecer a cada caso teste e o tamanho do incremento utilizado [TIU].
