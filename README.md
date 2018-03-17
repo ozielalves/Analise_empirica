@@ -52,15 +52,19 @@ Feito isso, basta rodar o programa com os parametros desejados:
 ./bin/analise [TIC] [NT] [I] [NI]
 ```
 + [TIC] - **_Tamanho inicial do Conjunto_**
-    Como o programa é projetado para testar e analisar algoritmos de busca, é necessário definir o número de elementos que o conjunto irá possuir para então, testar nele o algoritmo de busca.
+
+	Como o programa é projetado para testar e analisar algoritmos de busca, é necessário definir o número de elementos que o conjunto irá possuir para então, testar nele o algoritmo de busca.
 
 + [NT] - **_Número de testes_**
-    Irá estipular quantas vezes o algoritmo de busca será testado para cada número de incrementos [NI], para depois gerar uma média de tempo/iterações que ele consome.
+
+	Irá estipular quantas vezes o algoritmo de busca será testado para cada número de incrementos [NI], para depois gerar uma média de tempo/iterações que ele consome.
 
 + [I] - **_Incremento_**
-    Irá definir o incremento obedecendo a seguinte função: _f_(i) = 10^i. Portando, é necessário tomar cuidado com valores acima de 6 (pois já é suficiente para travar um computador de médio porte dependendo da quantidade de incrementos).
+
+	Irá definir o incremento obedecendo a seguinte função: _f_(i) = 10^i. Portando, é necessário tomar cuidado com valores acima de 6 (pois já é suficiente para travar um computador de médio porte dependendo da quantidade de incrementos).
 
 + [NI] - **_Numero de Incrementos_**
+		
 	Esse parametro irá definir o número de incrementos que irão acontecer obedecendo os parâmetros estipulados anteriormente.
 	
 Então, se rodarmos o programa com as seguintes definições:
@@ -91,56 +95,56 @@ python3 src/plot.py [A] [I] [Title]
 ```
 + [A] - **_Algoritmos_**
 
-É um parâmetro composto por uma string binária, que segue a regra:
+	É um parâmetro composto por uma string binária, que segue a regra:
 
-`0111011` irá um gráfico comparando os algoritmos 2, 3, 4, 6 e 7.
+	`0111011` irá um gráfico comparando os algoritmos 2, 3, 4, 6 e 7.
 
-`1110000` irá gerar um gráfico comparando os algoritmos 1, 2, 3 apenas. 
+	`1110000`  ou `111` irá gerar um gráfico comparando os algoritmos 1, 2, 3 apenas. 
 
-`1000000` ou `1` irá gerar um gráfico exclusivo do primeiro algoritmo.
+	`1000000` ou `1` irá gerar um gráfico exclusivo do primeiro algoritmo.
 
-`0001000` ou `0001` irá gerar um gráfico exclusivo do 4º algoritmo.
+	`0001000` ou `0001` irá gerar um gráfico exclusivo do 4º algoritmo.
 
-A ordem dos algoritmos é:
+	**A ordem dos algoritmos é:**
 
-_1º Posição:_ 
+	*  _1º Posição:_ 
 
-_2º Posição:_ 
+	*  _2º Posição:_ 
 
-_3º Posição:_ 
+	*  _3º Posição:_ 
 
-_4º Posição:_ 
+	*  _4º Posição:_ 
 
-_5º Posição:_ 
+	*  _5º Posição:_ 
 
-_6º Posição:_ 
+	*  _6º Posição:_ 
 
-_7º Posição:_ 
+	*  _7º Posição:_ 
 
 + [I] - **_Informações_**
 
-Este parâmetro segue a mesma regra do parametro [A] e define quais informações irão compor os eixos X e Y, porem é composto por uma string binária que só pode conter 2 repetições do 1, visto que a plotagem do gráfico é em 2D. Exemplos:
+	Este parâmetro segue a mesma regra do parametro **_[A]_** e define quais informações irão compor os eixos _X_ e _Y_, porem é composto por uma string binária que só pode conter 2 repetições do `1`, visto que a plotagem do gráfico é em _2D_. Exemplos:
 
-`1010` Irá comparar o número de elementos com o tempo médio gasto nos testes.
+	`1010` Irá comparar o número de elementos com o tempo médio gasto nos testes.
 
-`1001` Irá comparar o número de elementos com o número de iterações médias gastas nos testes. 
+	`1001` Irá comparar o número de elementos com o número de iterações médias gastas nos testes. 
 
-A ordem das informações é:
+	**A ordem das informações é:**
 
-_1º Posição:_ Número de elementos
+	_1º:_ Número de elementos
+	
+	_2º:_ Número de testes
 
-_2º Posição:_ Número de testes
+	_3º:_ Tempo médio gasto
 
-_3º Posição:_ Tempo médio gasto
-
-_4º Posição:_ Iterações gastas
+	_4º:_ Iterações gastas
 
 + [Title] - **_Titulo da Plotagem_**
 
-Aqui você define o titulo que irá ser mostrado no gráfico.
+	Aqui você define o titulo que irá ser mostrado no gráfico.
 
 ### Quanto à organização das amostras
-É estipulado como parâmetro de execução o tamanho inicial do conjunto [TIC], o número de incrementos [NI] que irão acontecer a cada caso teste e o tamanho do incremento utilizado [TIU].
+É estipulado como parâmetro de execução o tamanho inicial do conjunto **_[TIC]_**, o número de incrementos **_[NI]_** que irão acontecer a cada caso teste e o tamanho do incremento utilizado **_[TIU]_**.
 Após isso, o programa irá gerar um conjunto de `TIC + (NI * TIU)` elementos e preenche-lo com elementos sequenciais crescentes, visto que a grande maioria dos algoritmos testados tem como requisição básica um conjunto **ordenado** de elementos e sem elementos repetidos.
 
 ### Quanto às buscas
