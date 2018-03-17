@@ -1,9 +1,9 @@
-# Makefile for the EDBI Project "Análise Empirica"
-# 
+# Makefile for the EDB I Project "Análise Empirica"
+
 # Creators:
 # 	- Felipe Ramos
 # 	- Oziel Alves
-#
+
 # Makefile conventions
 SHELL = /bin/sh
 
@@ -12,8 +12,7 @@ incdir = ./include
 srcdir = ./src
 objdir = ./obj
 bindir = ./bin
-
-# Objects
+datadir = ./data
 
 # Macros
 CC = g++
@@ -22,7 +21,7 @@ RM = -rm
 OBJS = $(addprefix $(objdir)/,util.o binary.o fibonacci.o jsearch.o sequential.o ternary.o)
 
 # Phony targets
-.PHONY: clean cleanobj cleanbin
+.PHONY: clean cleanobj cleanbin cleandata
 .PHONY: all main build util binary fibonacci jsearch sequential ternary
 
 # Use "make" to execute everything
@@ -45,8 +44,8 @@ ternary: $(objdir)/ternary.o
 # Compiles the main
 analise: $(srcdir)/main.cpp $(OBJS)
 	mkdir -p $(bindir)
+	mkdir -p $(datadir)
 	$(CC) $(CFLAGS) $^ -o $(bindir)/$@
-	#$(CC) $(CFLAGS) $^ -o $@
 
 
 # Builds only the util module
@@ -88,4 +87,8 @@ cleanobj:
 cleanbin:
 	$(RM) -rf $(bindir)/*
 
-clean: cleanobj cleanbin
+# Clean all data
+cleandata:
+	$(RM) -rf $(datadir)/*
+
+clean: cleanobj cleanbin cleandata
