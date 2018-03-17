@@ -9,9 +9,7 @@
 #include <iterator>
 
 // Default values
-#define TAM 2000000		// How many elements the vector will have
 #define SEARCH_FOR -2
-
 
 // A simple array print function
 void pArray( long int *, long int * );
@@ -26,8 +24,9 @@ void showArgs( int *argc, char **argv );
 void bp();
 
 // A function to pretty print all the results
-void printResults(int aSize, int array_size, long int time, int n_functions, long int *sum_times, long int *iterations );
+void printResults(int aSize, int array_size, long int time, const int n_functions, long int *sum_times, long int *iterations );
 
-void generateResults(int i, std::ofstream &file, int aSize, int array_size, long int time, int n_functions, long int *sum_times, long int *iterations );
+// A function to output the results on a .dat file
+void generateResults(int i, std::ofstream &file, int aSize, int array_size, long int time, const int n_functions, long int *sum_times, long int *iterations );
 
 #endif

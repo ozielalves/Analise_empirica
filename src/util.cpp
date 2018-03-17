@@ -33,7 +33,7 @@ void bp(void)
 	std::cout << std::setfill('-') << std::setw(70-11) << "" << std::endl; 
 }
 
-void printResults(int aSize, int array_size, long int time, int n_functions, long int *sum_times, long int *iterations ){
+void printResults(int aSize, int array_size, long int time, const int n_functions, long int *sum_times, long int *iterations ){
 	// A print for-loop to show the results (time, iterations..)
 		for(int i = 0; i < n_functions; i++){
 			// Just a simple divisor to make things pretty
@@ -65,7 +65,7 @@ void printResults(int aSize, int array_size, long int time, int n_functions, lon
 		}
 }
 
-void generateResults(int i, std::ofstream &file, int aSize, int array_size, long int time, int n_functions, long int *sum_times, long int *iterations){
+void generateResults(int i, std::ofstream &file, int aSize, int array_size, long int time, const int n_functions, long int *sum_times, long int *iterations){
 	long int average = *(sum_times + i) / time;
 	long int average_ite = *(iterations + i) / time;
 	file << array_size << " " << time << " " << std::fixed << std::setprecision(10) <<average/(long double)1000000000 << " " << average_ite << std::endl;
