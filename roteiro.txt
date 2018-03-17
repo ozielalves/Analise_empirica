@@ -5,9 +5,9 @@ Analise Empirica
 1. Busca sequencia interativa [OK]
 2. Busca binaria interativa [OK]
 3. Busca binaria recursiva [OK]
-4. Busca ternaria interativa 
-5. Busca ternaria recursiva [~Em andamento~]
+4. Busca ternaria interativa [OK]
+5. Busca ternaria recursiva [OK]
 6. Jump search [OK]
-7. Busca fibonacci
+7. Busca fibonacci [~Em andamento~]
 
 - Implementar os 100 testes a serem realizados em cada algoritimo [OK]
