@@ -3,7 +3,9 @@
 long int *i_ternary( long int *first, long int *last, long int value, long int *counter )
 {
 	long int *last_backup = last;
-	
+	long int *left;
+	long int *right;
+
 	while(first != last)
 	{
 		(*counter) += 1;
