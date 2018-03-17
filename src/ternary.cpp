@@ -10,7 +10,7 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 		long int *left = first + ( first - last )/(long int)3;
 		long int *right = left + ( first - last )/(long int)3;
 
-		//for the left pointer
+	/*	//for the left pointer
 		if(*left == value)
 		{
 			return left;
@@ -42,6 +42,28 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 					first = right + 1;	
 				}
 			}
+		} */
+
+		if(value >= *first and value < *left)
+		{
+			last = left;	
+		}
+		else if(value == *left)
+		{
+			return left;
+		}
+		else if(value > *left and value < *right)
+		{
+			first = left;
+			last = right;	
+		}
+		else if(value == *right)
+		{
+			return right;	
+		}
+		else if(value > *right and value < *last)
+		{
+			first = right;	
 		}
 	}
 
