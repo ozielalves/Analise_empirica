@@ -40,7 +40,7 @@ make
 
 Depois, basta rodar o programa com os parametros desejados:
 ```bash
-./bin/analise $(tamanho_inicial_array) $(numero_de_testes)
+./bin/analise $tamanho_inicial_array $numero_de_testes $incremento $numero_de_variacoes
 ```
 + **_Tamanho inicial do Array_**
 
@@ -48,3 +48,103 @@ Depois, basta rodar o programa com os parametros desejados:
 + **_Número de testes_**
 
     Esse parametro estipula quantas vezes o algoritmo de busca será testado, para depois obtermos uma média de tempo/passos que ele consome e assim gerar os gráficos.
+
++ **_Incremento_**
+    Esse parametro irá definir o incremento obedecendo a seguinte função: _f_(incremento) = 10^incremento. Portando, é necessário tomar cuidado com valores acima de 6 (pois já é suficiente para travar um computador de médio porte dependendo da quantidade de incrementos).
+
++ **_Numero de Variações_**
+	Esse parametro irá definir o número de variações obedecendo ao incremento que irão existir
+	
+Ou seja, se rodarmos o programa com as seguintes definições:
+```bash
+./bin/analise 10000 100 5 25
+```
+Teremos um programa que irá analisar 100 vezes um array de `long int` com:
+```
+10000 elementos
+10000 + 1 * 10^5 elementos
+10000 + 2 * 10^5 elementos
+10000 + 3 * 10^5 elementos
+...
+10000 + 23 * 10^5 elementos
+10000 + 24 * 10^5 elementos
+10000 + 25 * 10^5 elementos
+```
+
+E armazenará a média de tempo e iterações das 100 vezes, gerando gráficos para interpretação posterior. 
+
+_Obs:_ Vale lembrar que o programa pode ficar **bem** pesado caso dê um incremento muito forte (acima de 6, por exemplo) dada a função exponencial de crescimento.
+
+## Apresentação dos Algoritmos
+
+### Busca Sequencial
+<!--Breve explicação-->
+	#### Iterativa
+	<!--Pseudo-Código-->
+	<!--Complexidade-->
+	<!--Gráficos exclusivos-->
+		<!--Tempo x Iterações-->
+		<!--Tempo x Tamanho-->
+		<!--Iterações x Tamanho-->
+	<!--Opnião-->
+
+
+### Busca Binária
+<!--Breve explicação-->
+	#### Iterativa
+	<!--Pseudo-Código-->
+	<!--Complexidade-->
+	<!--Gráficos exclusivos-->
+		<!--Tempo x Iterações-->
+		<!--Tempo x Tamanho-->
+		<!--Iterações x Tamanho-->
+	<!--Opnião-->
+	#### Recursiva
+	<!--Pseudo-Código-->
+	<!--Complexidade-->
+	<!--Gráficos exclusivos-->
+		<!--Tempo x Iterações-->
+		<!--Tempo x Tamanho-->
+		<!--Iterações x Tamanho-->
+	<!--Opnião-->
+
+### Busca Ternária
+<!--Breve explicação-->
+	#### Iterativa
+	<!--Pseudo-Código-->
+	<!--Complexidade-->
+	<!--Gráficos exclusivos-->
+		<!--Tempo x Iterações-->
+		<!--Tempo x Tamanho-->
+		<!--Iterações x Tamanho-->
+	<!--Opnião-->
+	#### Recursiva
+	<!--Pseudo-Código-->
+	<!--Complexidade-->
+	<!--Gráficos exclusivos-->
+		<!--Tempo x Iterações-->
+		<!--Tempo x Tamanho-->
+		<!--Iterações x Tamanho-->
+	<!--Opnião-->
+
+### Jump Search
+<!--Breve explicação-->
+	<!--Pseudo-Código-->
+	<!--Complexidade-->
+	<!--Gráficos exclusivos-->
+		<!--Tempo x Iterações-->
+		<!--Tempo x Tamanho-->
+		<!--Iterações x Tamanho-->
+	<!--Opnião-->
+	
+
+### Busca Fibonacci
+<!--Breve explicação-->
+	<!--Pseudo-Código-->
+	<!--Complexidade-->
+	<!--Gráficos exclusivos-->
+		<!--Tempo x Iterações-->
+		<!--Tempo x Tamanho-->
+		<!--Iterações x Tamanho-->
+	<!--Opnião-->
+	
