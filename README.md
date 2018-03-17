@@ -90,9 +90,54 @@ Para utilizar o script, basta na raiz do repositório executar:
 python3 src/plot.py [A] [I] [Title]
 ```
 + [A] - **_Algoritmos_**
-É um parâmetro composto por uma string bin
-+ [I] - 
-+ [Title] - 
+
+É um parâmetro composto por uma string binária, que segue a regra:
+
+`0111011` irá um gráfico comparando os algoritmos 2, 3, 4, 6 e 7.
+
+`1110000` irá gerar um gráfico comparando os algoritmos 1, 2, 3 apenas. 
+
+`1000000` ou `1` irá gerar um gráfico exclusivo do primeiro algoritmo.
+
+`0001000` ou `0001` irá gerar um gráfico exclusivo do 4º algoritmo.
+
+A ordem dos algoritmos é:
+
+_1º Posição:_ 
+
+_2º Posição:_ 
+
+_3º Posição:_ 
+
+_4º Posição:_ 
+
+_5º Posição:_ 
+
+_6º Posição:_ 
+
+_7º Posição:_ 
+
++ [I] - **_Informações_**
+
+Este parâmetro segue a mesma regra do parametro [A] e define quais informações irão compor os eixos X e Y, porem é composto por uma string binária que só pode conter 2 repetições do 1, visto que a plotagem do gráfico é em 2D. Exemplos:
+
+`1010` Irá comparar o número de elementos com o tempo médio gasto nos testes.
+
+`1001` Irá comparar o número de elementos com o número de iterações médias gastas nos testes. 
+
+A ordem das informações é:
+
+_1º Posição:_ Número de elementos
+
+_2º Posição:_ Número de testes
+
+_3º Posição:_ Tempo médio gasto
+
+_4º Posição:_ Iterações gastas
+
++ [Title] - **_Titulo da Plotagem_**
+
+Aqui você define o titulo que irá ser mostrado no gráfico.
 
 ### Quanto à organização das amostras
 É estipulado como parâmetro de execução o tamanho inicial do conjunto [TIC], o número de incrementos [NI] que irão acontecer a cada caso teste e o tamanho do incremento utilizado [TIU].
