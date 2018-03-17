@@ -18,7 +18,7 @@ def treatName(filepath):
     """
     A function to extract only the name of the file from the filepath
     """
-    name = re.split(r'\.*', filepath) 
+    name = re.split(r'\.*', filepath)
     return name[0]
 
 
@@ -77,7 +77,7 @@ os.chdir("data/")
 extension = '*'
 
 for file in glob.glob(extension):
-    # Collect data from *.txt files
+    # Collect data from $extension files
     if files_to_work[indexFinder(file, glob.glob(extension))] == str(1):
         # finds if the user wants this file to be processed or nah
         with open(file, 'r') as content:

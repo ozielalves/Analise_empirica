@@ -46,7 +46,6 @@ int main(int argc, char **argv) {
 		std::cout << status << "array_increment = " << array_increment << min;
 		number_of_arrays = atol(argv[4]);
 		std::cout << status << "number_of_arrays = " << number_of_arrays << min;
-		
 	}
 
 	bp();
@@ -59,13 +58,15 @@ int main(int argc, char **argv) {
 	 * 
 	 * And PLEASE, do not forget to update n_functions variable
 	 */
-	int n_functions = 4;
+	const int n_functions = 4; // VERY IMPORTANT CONSTANT
+
 	long int *(*pointer[n_functions])(long int *, long int *, long int, long int *);
 	pointer[0] = &i_binary;
 	pointer[1] = &r_binary;
 	pointer[2] = &jsearch;
 	pointer[3] = &ssearch;
 
+	// Here the names are defined for the output files
 	std::string names[n_functions];
 	names[0] = "Iterative Binary";
 	names[1] = "Recursive Binary";
@@ -130,7 +131,7 @@ int main(int argc, char **argv) {
 		for(int i = 0; i < n_functions; i++){
 			std::stringstream filepath;
 
-			filepath << DATADIR << "alg_" << names[i] << ".txt";
+			filepath << DATADIR << names[i] << ".dat";
 			std::ofstream outFile(filepath.str(), std::ios::app);	
 			generateResults(i,outFile, aSize, array_size, times_to_run, n_functions, sum_times, iterations);
 			outFile.close();
@@ -139,9 +140,6 @@ int main(int argc, char **argv) {
 
 		// Function to print all the results
 		printResults(aSize, array_size, times_to_run, n_functions, sum_times, iterations);
-
-		// Put the stream here
-
 
 		delete[] sum_times;
 		delete[] iterations;
