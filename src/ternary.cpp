@@ -10,43 +10,9 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 		long int *left = first + ( first - last )/(long int)3;
 		long int *right = left + ( first - last )/(long int)3;
 
-	/*	//for the left pointer
-		if(*left == value)
-		{
-			return left;
-		}
-		else // if(*left != value)
-		{
-			if(*left > value) // value < *last
-			{
-				last = left - 1; 
-			}
-			else if(*left < value)
-			{
-				first = left + 1;
-			}
-
-			// for the right pointer
-			else if(*right == value)
-			{
-				return right;
-			}
-			else if(*right != value)
-			{
-				if(*right > value)
-				{
-					last = right - 1;
-				}
-				else if(*right < value) 
-				{
-					first = right + 1;	
-				}
-			}
-		} */
-
 		if(value >= *first and value < *left)
 		{
-			last = left;	
+			last = left - 1;	
 		}
 		else if(value == *left)
 		{
@@ -54,8 +20,8 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 		}
 		else if(value > *left and value < *right)
 		{
-			first = left;
-			last = right;	
+			first = left + 1;
+			last = right - 1;	
 		}
 		else if(value == *right)
 		{
@@ -63,7 +29,7 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 		}
 		else if(value > *right and value < *last)
 		{
-			first = right;	
+			first = right + 1;	
 		}
 	}
 
@@ -85,39 +51,29 @@ long int *r_ternary( long int *first, long int *last, long int value, long int *
 	
 	//for the left pointer
 	if(*left == value)
-	{ //*left is the value
+	{
 		return left; 	
 	}
-	else
-	{ //if *left != value 
-		if(*left > value)
-		{
-			last = left - 1;
-				return r_ternary( first, last, value, counter );
-		}
-		if(*left < value)
-		{ //if *left < value
-			first = left + 1;
-				return r_ternary( first, last, value, counter );
-		}
 	//for the right pointer
-	if(*right == value)
-	{ //*right is the value
-		return right;
+	else if(*right == value)
+	{
+		return right;	
 	}
-	else if(*right !=value)
-	{ //if *right != value
-		if(*right > value)
-		{ // value < *right
-			last = right;
-				return r_ternary( first, last, value, counter );
-		}
-		else
-		{ //if value > *right
-			first = right;
-				return r_ternary( first, last, value, counter );
-			}
+	else if(value >= *first and value < *left)
+	{
+		last = left - 1; // left was already tested before
+		return r_ternary( first, last, value, counter );	
 	}
+	else if(value > *left and x < *right)
+	{
+		first = left + 1;
+		last = right - 1;
+		return r_ternary( first, last, value, counter );	
+	}
+	else if(value > *right and value < *last)
+	{
+		first = right + 1;
+		return r_ternary( first, last, value, counter );	
 	}
 	return last_backup;	
 }
