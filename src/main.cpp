@@ -65,8 +65,8 @@ int main(int argc, char **argv) {
 	pointer[1] = &r_binary;
 	pointer[2] = &jsearch;
 	pointer[3] = &ssearch;
-	// pointer[4] = &i_ternary;
-	// pointer[5] = &r_ternary;
+	//pointer[4] = &i_ternary;
+	pointer[5] = &r_ternary;
 
 	// Here the names are defined for the output files
 	std::string names[n_functions];
@@ -74,8 +74,8 @@ int main(int argc, char **argv) {
 	names[1] = "Recursive Binary";
 	names[2] = "Jump Search";
 	names[3] = "Sequential Search";
-	// names[4] = "Interative Ternary";
-	// names[5] = "Recursive Ternary";
+	//names[4] = "Interative Ternary";
+	names[5] = "Recursive Ternary";
 
 	// Creates the vector that later we'll be working on
 	long int *big_random_vector = cArray(array_size + (number_of_arrays * array_increment));
