@@ -1,84 +1,77 @@
 # Análise Empírica de Algoritmos de Busca
-#### Disciplina: Estrutura de Dados Básicas I / Universidade Federal do Rio Grande do Norte ~ [UFRN](http://http://www.ufrn.br)
+Disciplina: Estrutura de Dados Básicas I, Universidade Federal do Rio Grande do Norte ([UFRN](http://http://www.ufrn.br))
 
-#### Alunos
+#### Alunos envolvidos
 - [Felipe Ramos](https://github.com/felipecramos/)
 - [Oziel Alves](https://github.com/ozielalves/)
 
-#### Implementações
-  ###### Buscas
-  - [x] Busca Binária (Iterativa / Recursiva)
-  - [x] Busca Sequencial (Iterativa)
-  - [ ] Busca Ternária (Iterativa / Recursiva)
-  - [x] Jump Search
-  - [ ] Busca Fibonacci
-
-  ###### Código
-  - [x] Códigos comentados
-  - [x] Implementação de function pointers
-  - [x] Modularização
-  - [x] Makefile
-  - [x] Realce de cores nos outputs
-  - [x] Plotagem de gráficos
-  - [x] Outputs .dat com dados gerados
-
-
 ## Objetivos
-Analisar e avaliar o comportamento **assintótico** dos algoritmos em relação ao seu tempo de execução, os cenários deverão simular a execução dos algoritmos para diversos tamanhos de amostras com valores de *n* crescentes, até atingir o limite da máquina de testes. Por esta razão iremos gerar pelo menos 25 variações no tamanho das amostras dos elementos.
+Analisar e avaliar o comportamento **assintótico** dos algoritmos em relação ao seu tempo de execução e número de iterações. Os cenários irão simular a execução dos algoritmos para diversos tamanhos de amostras com tamanhos de elementos *n* crescentes, até atingir o limite da máquina de testes.
 
-#### Organização das amostras
-Iremos assumir que os arranjos já se encontram ordenados e sem repetições.
+## Instruções de uso
 
-#### Sobre as buscas
-Todos os algoritmos serão testados contra seu pior caso, ou seja, quando *k* não se encontra no arranjo **A**. 
+### Dependências
+<!-- Dependências aqui -->
 
-## Instruções de uso 
-Para compilar, basta usar o seguintes comandos:
+### Compilação
+Para compilar, basta usar o seguintes comandos na raiz do repositório:
 ```bash
-# Via git
-git clone https://github.com/ozielalves/Analise_empirica.git
-cd Analise_empirica
+# Para compilar apenas
 make
 
-# Caso já tenha o diretório, basta estar dentro dele e usar
-make
-```
+# Para compilar e executar o algoritmo com parâmetros pré-definidos
+make run
 
-Depois, basta rodar o programa com os parametros desejados:
+# // =========================== OPCIONAL =========================== //
+# Para compilar apenas determinado arquivo
+make [arquivo]
+
+# Para limpar dados residuais (objetos, executáveis, dados gerados...)
+make clean
+```
+### Execução
+Feito isso, basta rodar o programa com os parametros desejados:
 ```bash
-./bin/analise [tamanho_inicial_array] [numero_de_testes] [incremento] [numero_de_variacoes]
+./bin/analise [TIC] [NT] [I] [NI]
 ```
-+ **_Tamanho inicial do Array_**
-    Como o programa é projetado para testar e analisar algoritmos de busca, é necessário definir o número de elementos que o array irá possuir para então, testar nele o algoritmo de busca. Vale lembrar que irão acontecer 25 incrementos no array (número estipulado dentro do `src/main.cpp`) e será um array já ordenado em ordem crescente.
++ [TIC] - **_Tamanho inicial do Conjunto_**
+    Como o programa é projetado para testar e analisar algoritmos de busca, é necessário definir o número de elementos que o conjunto irá possuir para então, testar nele o algoritmo de busca.
 
-+ **_Número de testes_**
-    Esse parametro estipula quantas vezes o algoritmo de busca será testado, para depois obtermos uma média de tempo/passos que ele consome e assim gerar os gráficos.
++ [NT] - **_Número de testes_**
+    Irá estipular quantas vezes o algoritmo de busca será testado para cada número de incrementos [NI], para depois gerar uma média de tempo/iterações que ele consome.
 
-+ **_Incremento_**
-    Esse parametro irá definir o incremento obedecendo a seguinte função: _f_(incremento) = 10^incremento. Portando, é necessário tomar cuidado com valores acima de 6 (pois já é suficiente para travar um computador de médio porte dependendo da quantidade de incrementos).
++ [I] - **_Incremento_**
+    Irá definir o incremento obedecendo a seguinte função: _f_(i) = 10^i. Portando, é necessário tomar cuidado com valores acima de 6 (pois já é suficiente para travar um computador de médio porte dependendo da quantidade de incrementos).
 
-+ **_Numero de Variações_**
-	Esse parametro irá definir o número de variações obedecendo ao incremento que irão existir
++ [NI] - **_Numero de Incrementos_**
+	Esse parametro irá definir o número de incrementos que irão acontecer obedecendo os parâmetros estipulados anteriormente.
 	
-Ou seja, se rodarmos o programa com as seguintes definições:
+Então, se rodarmos o programa com as seguintes definições:
 ```bash
 ./bin/analise 10000 100 5 25
 ```
-Teremos um programa que irá analisar 100 vezes um array de `long int` com:
+Teremos um programa que irá analisar 100 vezes um conjunto constituido com:
 ```
 10000 elementos
-10000 + 1 * 10^5 elementos
-10000 + 2 * 10^5 elementos
-10000 + 3 * 10^5 elementos
+10000 + (1 * 10^5) elementos
+10000 + (2 * 10^5) elementos
+10000 + (3 * 10^5) elementos
 ...
-10000 + 23 * 10^5 elementos
-10000 + 24 * 10^5 elementos
-10000 + 25 * 10^5 elementos
+10000 + (23 * 10^5) elementos
+10000 + (24 * 10^5) elementos
+10000 + (25 * 10^5) elementos
 ```
 
 E armazenará a média de tempo e iterações das 100 vezes, gerando gráficos para interpretação posterior. 
 
-_Obs:_ Vale lembrar que o programa pode ficar **bem** pesado caso dê um incremento muito forte (acima de 6, por exemplo) dada a função exponencial de crescimento.
+_Obs:_ Vale lembrar que o programa pode ficar **bem** pesado caso o incremento estipulado seja muito forte (acima de 6, por exemplo) dada a função crescimento.
+
+### Quanto à organização das amostras
+É estipulado como parâmetro de execução o tamanho inicial do conjunto [TIC], o número de incrementos [NI] que irão acontecer a cada caso teste e o tamanho do incremento utilizado [TIU].
+Após isso, o programa irá gerar um conjunto de `TIC + (NI * TIU)` elementos e preenche-lo com elementos sequenciais crescentes, visto que a grande maioria dos algoritmos testados tem como requisição básica um conjunto **ordenado** de elementos e sem elementos repetidos.
+
+### Quanto às buscas
+Todos os algoritmos serão testados contra seu pior caso, ou seja, quando *k* não se encontra no arranjo **A**. 
 
 ## Apresentação dos Algoritmos
 
@@ -153,11 +146,11 @@ _Obs:_ Vale lembrar que o programa pode ficar **bem** pesado caso dê um increme
 		<!--Iterações x Tamanho-->
 	<!--Opnião-->
 	
-### Comparações Gerais
+## Comparações Gerais
 <!--Breve explicação-->
-	#### Tempo x Iterações
-	#### Tempo x Tamanho
-	#### Iterações x Tamanho
+	### Tempo x Iterações
+	### Tempo x Tamanho
+	### Iterações x Tamanho
 
 <!--Conclusões finais-->
 
