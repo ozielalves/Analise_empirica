@@ -107,19 +107,19 @@ python3 src/plot.py [A] [I] [Title]
 
 	**A ordem dos algoritmos é:**
 
-	*  _1º Posição:_ 
+	*  _1º:_ **Busca Sequencial Iterativa**
 
-	*  _2º Posição:_ 
+	*  _2º:_ **Busca Binária Iterativa**
 
-	*  _3º Posição:_ 
+	*  _3º:_ **Busca Binária Recurssiva**
 
-	*  _4º Posição:_ 
+	*  _4º:_ **Busca Ternária Iterativa**
 
-	*  _5º Posição:_ 
+	*  _5º:_ **Busca Ternária Iterativa**
 
-	*  _6º Posição:_ 
+	*  _6º:_ **Jump Search**
 
-	*  _7º Posição:_ 
+	*  _7º:_ **Busca Fibonacci**
 
 + [I] - **_Informações_**
 
@@ -131,13 +131,13 @@ python3 src/plot.py [A] [I] [Title]
 
 	**A ordem das informações é:**
 
-	_1º:_ Número de elementos
+	_1º:_ **Número de elementos**
 	
-	_2º:_ Número de testes
+	_2º:_ **Número de testes**
 
-	_3º:_ Tempo médio gasto
+	_3º:_ **Tempo médio gasto**
 
-	_4º:_ Iterações gastas
+	_4º:_ **Iterações gastas**
 
 + [Title] - **_Titulo da Plotagem_**
 
