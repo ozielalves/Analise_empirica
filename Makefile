@@ -22,10 +22,15 @@ OBJS = $(addprefix $(objdir)/,util.o binary.o fibonacci.o jsearch.o sequential.o
 
 # Phony targets
 .PHONY: clean cleanobj cleanbin cleandata
-.PHONY: all main build util binary fibonacci jsearch sequential ternary
+.PHONY: all run main build util binary fibonacci jsearch sequential ternary
+
 
 # Use "make" to execute everything
 all: build main
+
+# Use "make run" to compile and execute everything
+run: build main analise
+	./$(bindir)/analise 10000 100 5 30
 
 # Use "make main" to compile the main
 main: analise

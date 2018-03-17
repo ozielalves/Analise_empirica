@@ -85,7 +85,7 @@ Teremos um programa que irá analisar 100 vezes um conjunto constituido com:
 
 E armazenará a média de tempo e iterações das 100 vezes, gerando gráficos para interpretação posterior. 
 
-_Obs:_ Vale lembrar que o programa pode ficar **bem** pesado caso o incremento estipulado seja muito forte (acima de 6, por exemplo) dada a função crescimento.
+_**Obs:**_ Vale lembrar que o programa pode ficar **bem** pesado caso o incremento estipulado seja muito forte (acima de 6, por exemplo) dada a função crescimento.
 
 #### Plotagem de gráficos
 O programa realiza a plotagem de gráficos utilizando um script em python 3 se aproveitando da lib matplotlib.
