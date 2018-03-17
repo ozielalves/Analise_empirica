@@ -35,8 +35,6 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 		}
 	
 	}
-
-	(*counter) += 1;
 	return last_backup;	
 }
 
