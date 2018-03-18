@@ -2,6 +2,26 @@
 #include <iostream>
 #include <iterator>
 
+long int Fibseq(long int size)
+{
+	long int vf[size];
+
+	for (auto i(1); i <= size; i++)
+	{
+		if(size == 1 || size == 2)
+		{
+			return 1;	
+		}
+		else
+		{
+			return Fibseq(size - 1) + Fibseq(size - 2);	
+		}
+	
+		vf[i] = Fibseq(i);
+	}
+																																return vf[size];
+}
+
 void pArray(long int *first, long int *last)
 {
 	std::cout << "[ ";

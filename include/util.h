@@ -11,6 +11,9 @@
 // Default values
 #define SEARCH_FOR -2
 
+// Fibonacci sequence
+long int Fibseq(long int size);
+
 // A simple array print function
 void pArray( long int *, long int * );
 
