@@ -18,7 +18,7 @@
 
 int main(int argc, char **argv) {
 	system("clear");
-	system("rm -rf data/*.txt");
+	system("rm -rf data/*");
 	
 	// Default message headers
 	std::string status 	= "\e[1;32mSTATUS: \e[0;0m";
@@ -70,12 +70,12 @@ int main(int argc, char **argv) {
 
 	// Here the names are defined for the output files
 	std::string names[n_functions];
-	names[0] = "Sequential Search";
-	names[1] = "Iterative Binary";
-	names[2] = "Recursive Binary";
-	names[3] = "Interative Ternary";
-	names[4] = "Recursive Ternary";
-	names[5] = "Jump Search";
+	names[0] = "0-Sequential Search";
+	names[1] = "1-Iterative Binary";
+	names[2] = "2-Recursive Binary";
+	names[3] = "3-Iterative Ternary";
+	names[4] = "4-Recursive Ternary";
+	names[5] = "5-Jump Search";
 
 	// Creates the vector that later we'll be working on
 	long int *big_random_vector = cArray(array_size + (number_of_arrays * array_increment));
