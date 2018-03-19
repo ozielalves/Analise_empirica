@@ -47,6 +47,7 @@ int main(int argc, char **argv) {
 		number_of_arrays = atol(argv[4]);
 		std::cout << status << "number_of_arrays = " << number_of_arrays << min;
 	}
+	long int SEARCH_FOR = 2 * array_size + pow(10, array_increment);
 
 	bp();
 	std::cout << status << "Running..." << min;

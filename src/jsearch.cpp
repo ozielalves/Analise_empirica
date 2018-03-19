@@ -6,8 +6,9 @@ long int *jsearch( long int *first, long int *last, long int value, long int *co
 	long int n = last - first;
 	long int m = sqrt(n);
 	long int *last_backup = last;
+	long int k;
 	
-	for( auto k(1); (k * m) < n; k++ )
+	for( k = 1; (k * m) < n; k++ )
 	{
 		*counter += 1;
 		if( value == *(first + k * m) )
@@ -23,5 +24,9 @@ long int *jsearch( long int *first, long int *last, long int value, long int *co
 				return last;
 		}
 	}
-	return last_backup;
+	auto result = ssearch( (first + (k - 1) * m) + 1, last_backup, value, counter);
+	if( result != (first + k * m) )
+		return result;
+	else 
+		return last_backup;
 }
