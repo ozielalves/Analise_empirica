@@ -263,13 +263,13 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 ## Condições de Testes
 ### Informações sobre a maquina utilizada
 <!--Maquina utilizada-->
-**Macbook Pro** (13-inch, 2017)
++ **Macbook Pro** (13-inch, 2017)
 
-**Processador** 2,3 GHz Intel Core i5
++ **Processador** 2,3 GHz Intel Core i5
 
-**Memória** 8 GB 2133 MHz LPDDR3
++ **Memória** 8 GB 2133 MHz LPDDR3
 
-**Sistema** macOS High Sierra 10.13.3
++ **Sistema** macOS High Sierra 10.13.3
 
 ### Informações sobre os parametros utilizados
 <!--Parametros utilizados-->
