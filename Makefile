@@ -30,7 +30,7 @@ all: build main
 
 # Use "make run" to compile and execute everything
 run: build main analise
-	./$(bindir)/analise 10000 100 5 30
+	./$(bindir)/analise 10 100 6 30
 
 # Use "make main" to compile the main
 main: analise
