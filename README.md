@@ -37,6 +37,9 @@ Para compilar, basta usar o seguintes comandos na raiz do repositório:
 make
 
 # Para compilar e executar o algoritmo com parâmetros pré-definidos
+# Que são:
+# ./bin/analise 10 200 6 25
+# python3 src/gen_plot.py
 make run
 
 # // =========================== OPCIONAL =========================== //
@@ -92,6 +95,10 @@ O programa realiza a plotagem de gráficos utilizando um script em python 3 se a
 Para utilizar o script, basta na raiz do repositório executar:
 ```bash
 python3 src/plot.py [A] [I] [Title]
+```
+Caso queira fazer a plotagem individual de todos os gráficos, basta utilizar:
+```bash
+python3 src/gen_plot.py
 ```
 + [A] - **_Algoritmos_**
 
@@ -154,9 +161,20 @@ Todos os algoritmos serão testados contra seu pior caso, ou seja, quando *k* n�
 
 ### Busca Sequencial
 <!--Breve explicação-->
+Também conhecida como busca linear, é um algoritmo de busca que procura por um elemento dado um conjunto, iterativamente, e checa se aquele é o elemento buscado.
 	#### Iterativa
+	Dado um conjunto _L_ de _n_ elementos, com um alvo T, a seguinte subrotina é implementada. 
 	<!--Pseudo-Código-->
+	1. É setado `i = 0`
+	2. Se `L[i] = T`, a busca termina e retorna-se `i`. 
+	3. `i` é incrementado em uma unidade.
+	4. Se `i < n`, iremos para o passo 2, se não, a busca termina sem sucesso.
 	<!--Complexidade-->
+	Para uma lista com _n_ elementos, o melhor cenário possivel é quando o valor buscado está na primeira posição do conjunto, enquanto que seu pior caso é quando T não pertence ao conjunto L.
+	
+	Podemos esperar que a seguinte função descreva o comportamento do algoritmo em relação ao número de elementos do conjunto.
+
+	{latex equation: n if k = 0; n+1/k+1 if 1 <= k <= n}	
 	<!--Gráficos exclusivos-->
 		<!--Tempo x Iterações-->
 		<!--Tempo x Tamanho-->

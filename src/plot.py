@@ -101,14 +101,15 @@ except IndexError:
     exit()
 
 process_files = convertBin(files_to_work)
-print("~ Debug Print:")
-print("\tfiles_to_work:")
-print("\t", files_to_work)
-print("\tprocess_files:")
-print("\t", process_files)
+#  print("~ Debug Print:")
+#  print("\tfiles_to_work:")
+#  print("\t", files_to_work)
+#  print("\tprocess_files:")
+#  print("\t", process_files)
+
 process_columns = convertBin(columns_to_work)
-print("\tprocess_columns:")
-print("\t", process_columns)
+#  print("\tprocess_columns:")
+#  print("\t", process_columns)
 
 if len(process_columns) > 2:
     # If the user wants to plot more than 2 axis (columns)
@@ -163,7 +164,7 @@ plt.legend()
 
 try:
     print("Showing Graphics")
-    plt.savefig(imagedir + outFilename, dpi=300)
+    plt.savefig(imagedir + outFilename, dpi=300, bbox_inches='tight')
     if showGraphic is True:
         plt.show()
 
