@@ -29,6 +29,7 @@ long int *fibonacci( long int *first, long int *last, long int value, long int *
 
 	while(fibM < size)
 	{
+		*(counter) += 1;
 		fib2 = fib1;
 		fib1 = fibM;
 		fibM = fib2 + fib1;	
@@ -40,6 +41,7 @@ long int *fibonacci( long int *first, long int *last, long int value, long int *
 
 	while(fibM > 1)
 	{
+		*(counter) += 1;
 		long int *cast1 = new long int;
 		*cast1 = offset + fib2;
 		long int *cast2 = new long int;
