@@ -12,10 +12,10 @@
 #define SEARCH_FOR -2
 
 // Confere para fibsearch
-long int min(int x, int y);
+long int *min(long int *x, long int *y);
 
 // Fibonacci sequence
-long int Fibseq(long int size);
+long int *Fibseq(long int size);
 
 // A simple array print function
 void pArray( long int *, long int * );
