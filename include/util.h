@@ -11,6 +11,9 @@
 // Default values
 #define SEARCH_FOR -2
 
+// Confere para fibsearch
+long int min(int x, int y);
+
 // Fibonacci sequence
 long int Fibseq(long int size);
 

@@ -2,11 +2,17 @@
 #include <iostream>
 #include <iterator>
 
-long int Fibseq(long int size)
+long int min(int x, int y) 
+{ 
+	return (x <= y)? x : y; 
+}
+
+long int *Fibseq(long int size)
 {
 	long int vf[size];
 
-	for (auto i(1); i <= size; i++)
+	/*for (auto i(1); i <= size; i++)*/
+	while( vf[i-1] < size)
 	{
 		if(size == 1 || size == 2)
 		{
@@ -19,7 +25,7 @@ long int Fibseq(long int size)
 	
 		vf[i] = Fibseq(i);
 	}
-																																return vf[size];
+	return vf;
 }
 
 void pArray(long int *first, long int *last)
