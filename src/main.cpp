@@ -62,23 +62,23 @@ int main(int argc, char **argv) {
 	const int n_functions = 7; // VERY IMPORTANT CONSTANT
 
 	long int *(*pointer[n_functions])(long int *, long int *, long int, long int *);
-	pointer[0] = &i_binary;
-	pointer[1] = &r_binary;
-	pointer[2] = &jsearch;
-	pointer[3] = &ssearch;
-	pointer[4] = &i_ternary;
-	pointer[5] = &r_ternary;
+	pointer[0] = &ssearch;
+	pointer[1] = &i_binary;
+	pointer[2] = &r_binary;
+	pointer[3] = &i_ternary;
+	pointer[4] = &r_ternary;
+	pointer[5] = &jsearch;
 	pointer[6] = &fibonacci;
 
 	// Here the names are defined for the output files
 	std::string names[n_functions];
-	names[0] = "Iterative Binary";
-	names[1] = "Recursive Binary";
-	names[2] = "Jump Search";
-	names[3] = "Sequential Search";
-	names[4] = "Interative Ternary";
-	names[5] = "Recursive Ternary";
-	names[6] = "Fibonacci search";
+	names[0] = "1-Sequential Search";
+	names[1] = "2-Iterative Binary";
+	names[2] = "3-Recursive Binary";
+	names[3] = "5-Interative Ternary";
+	names[4] = "6-Recursive Ternary";
+	names[5] = "4-Jump Search";
+	names[6] = "7-Fibonacci Search";
 
 	// Creates the vector that later we'll be working on
 	long int *big_random_vector = cArray(array_size + (number_of_arrays * array_increment));
