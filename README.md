@@ -208,7 +208,7 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Recursive%20Binary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Recursive%20Binary_14.png)
+![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Recursive%20Binary_13.png)
 <!--Opnião-->
 
 ### Busca Ternária
