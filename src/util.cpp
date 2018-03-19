@@ -2,6 +2,33 @@
 #include <iostream>
 #include <iterator>
 
+long int *min(long int *x, long int* y) 
+{ 
+	return (x <= y)? x : y; 
+}
+
+long int *Fibseq(long int size)
+{
+	/*long int vf[size];
+
+	//for (auto i(1); i <= size; i++)
+	while( vf[i-1] < size)
+	{
+		if(size == 1 || size == 2)
+		{
+			return 1;	
+		}
+		else
+		{
+			return Fibseq(size - 1) + Fibseq(size - 2);	
+		}
+	
+		vf[i] = Fibseq(i);
+	}
+	return vf;
+	*/
+}
+
 void pArray(long int *first, long int *last)
 {
 	std::cout << "[ ";

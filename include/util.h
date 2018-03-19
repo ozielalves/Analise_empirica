@@ -8,9 +8,11 @@
 #include <iomanip>
 #include <iterator>
 
-// Default values
-// #define SEARCH_FOR 1000000000000000000000000000000
-// long int SEARCH_FOR = 100000000000;
+// Confere para fibsearch
+long int *min(long int *x, long int *y);
+
+// Fibonacci sequence
+long int *Fibseq(long int size);
 
 // A simple array print function
 void pArray( long int *, long int * );
