@@ -30,7 +30,7 @@ all: build main
 
 # Use "make run" to compile and execute everything
 run: build main analise
-	./$(bindir)/analise 10 100 7 25
+	./$(bindir)/analise 10 100 7 25 1111111
 	python3 src/gen_plot.py
 
 # Use "make main" to compile the main
