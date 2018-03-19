@@ -25,8 +25,6 @@ long int *fibonacci( long int *first, long int *last, long int value, long int *
 	long int fib1 = 1;
 	long int fibM = fib2 + fib1;
 
-	std::cout << "oi" << std::endl;
-
 	while(fibM < size)
 	{
 		fib2 = fib1;
@@ -35,7 +33,6 @@ long int *fibonacci( long int *first, long int *last, long int value, long int *
 	}
 
 	long int offset = -1;
-	std::cout << "oi2" << std::endl;
 
 
 	while(fibM > 1)
@@ -65,9 +62,6 @@ long int *fibonacci( long int *first, long int *last, long int value, long int *
 		else return i;
 			
 	}
-	
-	std::cout << "oi3" << std::endl;
-
 
 	if(fib1 and *(first + offset + 1) == value) 
 	{
