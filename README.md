@@ -227,49 +227,53 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Recursive%20Ternary_14.png)
+![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/5-Recursive%20Ternary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Recursive%20Ternary_14.png)
+![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/5-Recursive%20Ternary_14.png)
 <!--Opnião-->
-
-### Busca Ternária
-<!--Breve explicação-->
 
 ### Jump Search
 <!--Breve explicação-->
-	<!--Pseudo-Código-->
-	<!--Complexidade-->
-	<!--Gráficos exclusivos-->
-		<!--Tempo x Iterações-->
-		<!--Tempo x Tamanho-->
-		<!--Iterações x Tamanho-->
-	<!--Opnião-->
+<!--Pseudo-Código-->
+<!--Complexidade-->
+<!--Gráficos exclusivos-->
+<!--Tempo x Iterações-->
+<!--Tempo x Tamanho-->
+<!--Iterações x Tamanho-->
+<!--Opnião-->
 	
 
 ### Busca Fibonacci
 <!--Breve explicação-->
-	<!--Pseudo-Código-->
-	<!--Complexidade-->
-	<!--Gráficos exclusivos-->
-		<!--Tempo x Iterações-->
-		<!--Tempo x Tamanho-->
-		<!--Iterações x Tamanho-->
-	<!--Opnião-->
+<!--Pseudo-Código-->
+<!--Complexidade-->
+<!--Gráficos exclusivos-->
+	<!--Tempo x Iterações-->
+	<!--Tempo x Tamanho-->
+	<!--Iterações x Tamanho-->
+<!--Opnião-->
 	
 ## Comparações Gerais
 <!--Breve explicação-->
-	### Tempo x Iterações
-	### Tempo x Tamanho
-	### Iterações x Tamanho
+### Tamanho x Iterações
+### Tamanho x Tempo médio 
 
 <!--Conclusões finais-->
 
 ## Condições de Testes
 ### Informações sobre a maquina utilizada
-	<!--Maquina utilizada-->
+<!--Maquina utilizada-->
+**Macbook Pro** (13-inch, 2017)
+
+**Processador** 2,3 GHz Intel Core i5
+
+**Memória** 8 GB 2133 MHz LPDDR3
+
+**Sistema** macOS High Sierra 10.13.3
+
 ### Informações sobre os parametros utilizados
-	<!--Parametros utilizados-->
+<!--Parametros utilizados-->
 ### Softwares utilizados
-	<!--Softwares utilizados-->
+<!--Softwares utilizados-->
 ### Dependências necessárias
-	<!--Dependências-->
+<!--Dependências-->
