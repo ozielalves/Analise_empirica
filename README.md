@@ -237,9 +237,9 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 <!--Pseudo-Código-->
 <!--Complexidade-->
 <!--Gráficos exclusivos-->
-<!--Tempo x Iterações-->
-<!--Tempo x Tamanho-->
-<!--Iterações x Tamanho-->
+##### Gráficos exclusivos
+###### Tamanho x Iterações
+###### Tamanho x Tempo médio
 <!--Opnião-->
 	
 
@@ -247,10 +247,9 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 <!--Breve explicação-->
 <!--Pseudo-Código-->
 <!--Complexidade-->
-<!--Gráficos exclusivos-->
-	<!--Tempo x Iterações-->
-	<!--Tempo x Tamanho-->
-	<!--Iterações x Tamanho-->
+##### Gráficos exclusivos
+###### Tamanho x Iterações
+###### Tamanho x Tempo médio
 <!--Opnião-->
 	
 ## Comparações Gerais
@@ -272,8 +271,27 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 + **Sistema** macOS High Sierra 10.13.3
 
 ### Informações sobre os parametros utilizados
-<!--Parametros utilizados-->
+Todos os gráficos gerados neste documento (README.md) foram gerados utilizando os seguintes parâmetros:
+```bash
+# Irá executar ./bin/analise 10 200 6 25; python3 src/gen_plot.py
+make run
+```
 ### Softwares utilizados
-<!--Softwares utilizados-->
-### Dependências necessárias
-<!--Dependências-->
+```bash
+$> g++ --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+```
+
+```bash
+$> python3 --version
+Python 3.6.4
+```
+
+```bash
+$> pip3 --version
+pip 9.0.1 from /usr/local/lib/python3.6/site-packages (python 3.6)
+```
