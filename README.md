@@ -122,7 +122,7 @@ python3 src/gen_plot.py
 
 	*  _4º:_ **Busca Ternária Iterativa**
 
-	*  _5º:_ **Busca Ternária Iterativa**
+	*  _5º:_ **Busca Ternária Recursiva**
 
 	*  _6º:_ **Jump Search**
 
@@ -189,79 +189,126 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 ![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/1-Sequential%20Search_13.png)
 <!--Opnião-->
 
-
 ### Busca Binária
+
 <!--Breve explicação-->
+
 #### Iterativa
+
 <!--Pseudo-Código-->
+
 <!--Complexidade-->
+
 ##### Gráficos exclusivos
+
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Iterative%20Binary_14.png)
 ###### Tamanho x Tempo médio
 ![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Iterative%20Binary_13.png)
+
 <!--Opnião-->
+
 #### Recursiva
+
 <!--Pseudo-Código-->
+
 <!--Complexidade-->
+
 ##### Gráficos exclusivos
+
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/3-Recursive%20Binary_14.png)
 ###### Tamanho x Tempo médio
 ![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/3-Recursive%20Binary_13.png)
+
 <!--Opnião-->
 
 ### Busca Ternária
+
 <!--Breve explicação-->
+
 #### Iterativa
+
 <!--Pseudo-Código-->
+
 <!--Complexidade-->
+
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Iterative%20Ternary_14.png)
 ###### Tamanho x Tempo médio
 ![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Iterative%20Ternary_13.png)
+
 <!--Opnião-->
+
 #### Recursiva
+
 <!--Pseudo-Código-->
+
 <!--Complexidade-->
+
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/5-Recursive%20Ternary_14.png)
 ###### Tamanho x Tempo médio
 ![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/5-Recursive%20Ternary_14.png)
+
 <!--Opnião-->
 
 ### Jump Search
+
 <!--Breve explicação-->
+
 <!--Pseudo-Código-->
+
 <!--Complexidade-->
+
 <!--Gráficos exclusivos-->
+
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ###### Tamanho x Tempo médio
+
 <!--Opnião-->
 	
 
 ### Busca Fibonacci
+
 <!--Breve explicação-->
+Fibonacci Search é uma técnica baseada em comparação que usa números Fibonacci para pesquisar um elemento em um vetor ordenado.
+
 <!--Pseudo-Código-->
+1. Encontre o menor número de Fibonacci maior ou igual a value. Deixe este número ser fibM [número Mth Fibonacci]. Deixe que os dois números de Fibonacci que precedem sejam fib1 [(m-1) 'th Fibonacci Number] e fib2 [(m-2)' th Fibonacci Number].
+2. Enquanto o vetor possui elementos a serem inspecionados:
+	a)Compare value com o último elemento da gama coberta por fib2
+	b) if value corresponder, retorna endereço
+	c) else if for menor do que o elemento, mova as três variáveis Fibonacci duas Fibonacci para baixo, indicando a eliminação de cerca de dois terços traseiros do vetor restante.
+	d) else value for maior do que o elemento, mova as três variáveis Fibonacci uma Fibonacci para baixo. Redefinir o deslocamento para o endereço. Juntos, estes indicam a eliminação de cerca de um terço do vetor restante.
+3. Uma vez que pode haver um único elemento restante para comparação, verifica se fib1 é 1. Se sim, compara x com o elemento restante. Se coincidir, retorna o endereço.
 <!--Complexidade-->
+
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ###### Tamanho x Tempo médio
+
 <!--Opnião-->
 	
 ## Comparações Gerais
+
 <!--Breve explicação-->
+
 ### Tamanho x Iterações
+
 ### Tamanho x Tempo médio 
 
 <!--Conclusões finais-->
 
 ## Condições de Testes
+
 ### Informações sobre a maquina utilizada
+
 <!--Maquina utilizada-->
+
 + **Macbook Pro** (13-inch, 2017)
 
 + **Processador** 2,3 GHz Intel Core i5
