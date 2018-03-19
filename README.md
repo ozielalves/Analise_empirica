@@ -180,53 +180,60 @@ Para uma lista com _n_ elementos, o melhor cenário possivel é quando o valor b
 	
 Podemos esperar que a seguinte função descreva o comportamento do algoritmo em relação ao número de elementos do conjunto.
 
-{latex equation: n if k = 0; n+1/k+1 if 1 <= k <= n}
+<!--{latex equation: n if k = 0; n+1/k+1 if 1 <= k <= n}-->
 <!--Gráficos exclusivos-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tempo x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/1-Sequential%20Search_14.png)
+![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/1-Sequential%20Search_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tempo x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/1-Sequential%20Search_13.png)
+![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/1-Sequential%20Search_13.png)
 <!--Opnião-->
 
 
 ### Busca Binária
 <!--Breve explicação-->
-	#### Iterativa
-	<!--Pseudo-Código-->
-	<!--Complexidade-->
-	<!--Gráficos exclusivos-->
-		<!--Tempo x Iterações-->
-		<!--Tempo x Tamanho-->
-		<!--Iterações x Tamanho-->
-	<!--Opnião-->
-	#### Recursiva
-	<!--Pseudo-Código-->
-	<!--Complexidade-->
-	<!--Gráficos exclusivos-->
-		<!--Tempo x Iterações-->
-		<!--Tempo x Tamanho-->
-		<!--Iterações x Tamanho-->
-	<!--Opnião-->
+#### Iterativa
+<!--Pseudo-Código-->
+<!--Complexidade-->
+##### Gráficos exclusivos
+###### Tamanho x Iterações
+![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Iterative%20Binary_14.png)
+###### Tamanho x Tempo médio
+![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Iterative%20Binary_13.png)
+<!--Opnião-->
+#### Recursiva
+<!--Pseudo-Código-->
+<!--Complexidade-->
+##### Gráficos exclusivos
+###### Tamanho x Iterações
+![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Recursive%20Binary_14.png)
+###### Tamanho x Tempo médio
+![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Recursive%20Binary_14.png)
+<!--Opnião-->
 
 ### Busca Ternária
 <!--Breve explicação-->
-	#### Iterativa
-	<!--Pseudo-Código-->
-	<!--Complexidade-->
-	<!--Gráficos exclusivos-->
-		<!--Tempo x Iterações-->
-		<!--Tempo x Tamanho-->
-		<!--Iterações x Tamanho-->
-	<!--Opnião-->
-	#### Recursiva
-	<!--Pseudo-Código-->
-	<!--Complexidade-->
-	<!--Gráficos exclusivos-->
-		<!--Tempo x Iterações-->
-		<!--Tempo x Tamanho-->
-		<!--Iterações x Tamanho-->
-	<!--Opnião-->
+#### Iterativa
+<!--Pseudo-Código-->
+<!--Complexidade-->
+##### Gráficos exclusivos
+###### Tamanho x Iterações
+![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Iterative%20Ternary_14.png)
+###### Tamanho x Tempo médio
+![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Iterative%20Ternary_13.png)
+<!--Opnião-->
+#### Recursiva
+<!--Pseudo-Código-->
+<!--Complexidade-->
+##### Gráficos exclusivos
+###### Tamanho x Iterações
+![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Recursive%20Ternary_14.png)
+###### Tamanho x Tempo médio
+![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Recursive%20Ternary_14.png)
+<!--Opnião-->
+
+### Busca Ternária
+<!--Breve explicação-->
 
 ### Jump Search
 <!--Breve explicação-->
