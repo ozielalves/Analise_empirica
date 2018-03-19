@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 	// An error message if the user leave argv empty
 	if(argc != 6){
 		std::cout << error << "Please, use:" << std::endl;
-		std::cout << "./bin/analise <array_size> <times> <increment(10 ^ x)> <number_of_arrays>";
+		std::cout << "./bin/analise <array_size> <times> <increment(10 ^ x)> <number_of_arrays> <algorithms_to_run>";
 		std::cout << min << std::endl;
 		return 1;
 	} else {
