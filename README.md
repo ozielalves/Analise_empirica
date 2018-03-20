@@ -252,7 +252,16 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 <!--Breve explicação-->
 Como a Binary Search, Jump Search é um algoritmo de pesquisa para arrays ordenados. A idéia básica é verificar menos elementos (do que a busca linear) saltando por etapas fixas ou ignorando alguns elementos no lugar de pesquisar todos os elementos.
 <!--Pseudo-Código-->
+Dado um conjunto _L_ de tamanho  _n_, com _x_ elementos, com um alvo `value`, a seguinte subrotina é implementada.
+
+1. O tamanho do vetor `n` é calculado e é passado como parametro para o calculo de sua raiz quadrada, definida como `m`
+2. O vetor é percorrido e a primeira comparação se baseia no *floor* da raiz de `n`   
+	1. Se `value` for igual a `m`, retorna o endereço de `m` no vetor
+	2. Se `value` for menor que  o valor comparado no vetor, segue uma busca linear a partir do incio do vetor até o ponto de comparação em questão
+		1. 
+
 <!--Complexidade-->
+√n // ...
 <!--Gráficos exclusivos-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
@@ -275,6 +284,7 @@ Fibonacci Search é uma técnica baseada em comparação que usa números Fibona
 
 3. Uma vez que pode haver um único elemento restante para comparação, verifica se `fib1` é 1. Se sim, compara `value` com o vetor restante. Se coincidir, retorna o endereço.
 <!--Complexidade-->
+O(log(n)) // ...
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ###### Tamanho x Tempo médio
