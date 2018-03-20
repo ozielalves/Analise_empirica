@@ -281,10 +281,10 @@ Fibonacci Search é uma técnica baseada em comparação que usa números Fibona
 1. Encontra o menor número de Fibonacci maior ou igual ao valor passado para a busca (`value`). Deixe que este número seja `fibM` [número Mth Fibonacci]. Deixe que os dois números de Fibonacci que precedem sejam `fib1` [(m-1) 'th Fibonacci Number] e `fib2` [(m-2)' th Fibonacci Number].
 
 2. Enquanto o vetor possui elementos a serem inspecionados:
-a) Compara `value` com o último elemento da gama coberta por `fib2`
-b) Se `value` corresponder, retorna endereço.
-c) Se for menor do que `value`, mova as três variáveis Fibonacci duas "Fibonacci" para baixo, indicando a eliminação de cerca de dois terços do vetor restante.
-d) Se `value` for maior do que o elemento, mova as três variáveis Fibonacci um "Fibonacci" para baixo. Redefina o deslocamento para o endereço. Juntos, estes indicam a eliminação de cerca de um terço do vetor restante.
+	1. Compara `value` com o último elemento da gama coberta por `fib2`
+	2. Se `value` corresponder, retorna endereço.
+	3. Se for menor do que `value`, mova as três variáveis Fibonacci duas "Fibonacci" para baixo, indicando a eliminação de cerca de dois terços do vetor restante.
+	4. Se `value` for maior do que o elemento, mova as três variáveis Fibonacci um "Fibonacci" para baixo. Redefina o deslocamento para o endereço. Juntos, estes indicam a eliminação de cerca de um terço do vetor restante.
 
 3. Uma vez que pode haver um único elemento restante para comparação, verifica se `fib1` é 1. Se sim, compara `value` com o vetor restante. Se coincidir, retorna o endereço.
 <!--Complexidade-->
