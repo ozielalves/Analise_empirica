@@ -232,16 +232,15 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 Busca Ternária é uma técnica em ciência da computação para encontrar o mínimo ou o máximo de uma função unimodal. Uma busca ternária determina se o mínimo ou o máximo podem ou não estar no primeiro terço do domínio ou se ele pode ou não estar no último terço do domínio e, em seguida, repete o passo para o terceiro restante.
 #### Iterativa
 <!--Pseudo-Código-->
-Dada um vetor ordenado _L_, seu comprimento _n_ e uma chave de busca _s_.
+Seja _f(x)_ ser uma função unimodal em algum intervalo [l ; r]. Pegue os dois pontos `m1` e `m2` neste segmento: l < _m1_ < _m2_ < r. Depois, existem três possibilidades:
 
-1. Enquanto _verdade_: Se _n_ < _s_: retorne _n_/2
- = left + (right - left)/3
-        rightThird = right - (right - left)/3
+1. Se `f(m1) < f(m2)`, então o máximo requerido não pode ser localizado no lado esquerdo - [l ; m1]. Isso significa que o máximo ainda faz sentido olhar apenas no intervalo [m1 ; r]
+2. Se `f(m1) > f(m2)`, que a situação é semelhante à anterior, até a simetria. Agora, o máximo exigido não pode estar no lado direito - [m2 ; r], então vá para o segmento [l ; m2]
+3. Se `f(m1) = f(m2)`, a busca deve ser realizada em [m1 ; m2], mas este caso pode ser atribuído a qualquer um dos dois anteriores (para simplificar o código). Mais cedo ou mais tarde, o comprimento do segmento será um pouco menor do que uma constante predeterminada, e o processo pode ser interrompido.
 
-        if f(leftThird) < f(rightThird):
-            left = leftThird
-        else:
-            right = rightThird
+Pontos de escolha `m1` e `m2`:
+i. `m1 = l + (r-l) / 3`
+ii. `m2 = r - (r-l) / 3`
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
