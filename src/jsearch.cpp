@@ -11,22 +11,32 @@ long int *jsearch( long int *first, long int *last, long int value, long int *co
 	for( k = 1; (k * m) < n; k++ )
 	{
 		*counter += 1;
-		if( value == *(first + k * m) )
+		if( value == *(first + k * m) ){
+			*counter += 1;
 			return first + k * m;
-		if( *(first + k * m) > value )
-		{
-			// ponteiros passados - analisar
+		}
+		if ( *(first + k * m) > value ) {
+			*counter += 2;
+
 			auto result = ssearch( (first + (k - 1) * m), ((first + k * m)), value, counter);
 		
-			if( result != (first + k * m) )
+			if( result != (first + k * m) ){
+				*counter += 1;
 				return result;
-			else
+			} else {
+				*counter += 1;
 				return last;
+			}
 		}
 	}
+
 	auto result = ssearch( (first + (k - 1) * m) + 1, last_backup, value, counter);
-	if( result != (first + k * m) )
+
+	if( result != (first + k * m) ){
+		*counter += 1;
 		return result;
-	else 
+	} else {
+		*counter += 1;
 		return last_backup;
+	}
 }
