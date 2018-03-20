@@ -99,7 +99,7 @@ bp();
 	names[0] = "1-Sequential Search";
 	names[1] = "2-Iterative Binary";
 	names[2] = "3-Recursive Binary";
-	names[3] = "5-Interative Ternary";
+	names[3] = "5-Iterative Ternary";
 	names[4] = "6-Recursive Ternary";
 	names[5] = "4-Jump Search";
 	names[6] = "7-Fibonacci Search";
