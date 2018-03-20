@@ -256,24 +256,26 @@ Dada um vetor ordenado _L_, seu comprimento _n_ e uma chave de busca _s_.
 
 Saída: a posição de **s** em **L**, ou _nada_ se **s** não estiver em **L**.
 
-  *a* ← 0
-  *b* ← ⌊*√n*⌋
+		*a* ← 0
+		*b* ← ⌊*√n*⌋
+	
+	Enquanto `Lmin((b, n) -1)` < **s** faça:
+    		*a ← b
+     		b ← b* + ⌊*√n*⌋
+    		
+	Se um ≥ _n_ então:
+      		devolva _nada_
 
-  Enquanto `Lmin((b, n) -1)` < **s** faça:
-    *a ← b
-     b ← b* + ⌊*√n*⌋
-    se um ≥ _n_ então
-      devolva _nada_
+  	Enquanto `La` < **s** faça:
+    		*a ← a + 1*
+    
+    	Se *a = min (b, n)*
+      		devolva _nada_
 
-  Enquanto `La` < **s** faça:
-    *a ← a + 1*
-    se *a = min (b, n)*
-      devolva _nada_
-
-  Se `La` = **s** então
-    devolver 1
-  Se não
-    devolva _nada_
+  	Se `La` = **s** então
+    		devolver 1
+  	Se não
+    		devolva _nada_
 
 <!--Complexidade-->
 Devido a comparação dos blocos formados,ambas as etapas do algoritmo observam, no máximo, √n itens, o que leva o algoritmo a apresentar em seu pior caso complexidade O(*√n*).
