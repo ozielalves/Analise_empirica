@@ -190,9 +190,9 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 <!--Gráficos exclusivos-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/pi/lonely/1-Sequential%20Search_14.png)
+![Alt Tamanho x Iterações](./pi/lonely/1-Sequential%20Search_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/pi/lonely/1-Sequential%20Search_13.png)
+![Alt Tamanho x Tempo médio](./pi/lonely/1-Sequential%20Search_13.png)
 <!--Opnião-->
 
 
@@ -216,15 +216,15 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](./pi/lonely/2-Iterative%20Binary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](2-Iterative%20Binary_13.png)
+![Alt Tamanho x Tempo médio](./pi/lonely/2-Iterative%20Binary_13.png)
 <!--Opnião-->
 #### Recursiva
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](3-Recursive%20Binary_14.png)
+![Alt Tamanho x Iterações](./pi/lonely/3-Recursive%20Binary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](3-Recursive%20Binary_13.png)
+![Alt Tamanho x Tempo médio](./pi/lonely/3-Recursive%20Binary_13.png)
 <!--Opnião-->
 
 ### Busca Ternária
@@ -234,18 +234,18 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](4-Iterative%20Ternary_14.png)
+![Alt Tamanho x Iterações](./pi/lonely/5-Iterative%20Ternary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](4-Iterative%20Ternary_13.png)
+![Alt Tamanho x Tempo médio](./pi/lonely/5-Iterative%20Ternary_13.png)
 <!--Opnião-->
 #### Recursiva
 <!--Pseudo-Código-->
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/5-Recursive%20Ternary_14.png)
+![Alt Tamanho x Iterações](./pi/lonely/6-Recursive%20Ternary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/5-Recursive%20Ternary_14.png)
+![Alt Tamanho x Tempo médio](./pi/lonely/6-Recursive%20Ternary_13.png)
 <!--Opnião-->
 
 ### Jump Search
@@ -265,7 +265,10 @@ Dado um conjunto _L_ de tamanho  _n_, com _x_ elementos, com um alvo `value`, a 
 <!--Gráficos exclusivos-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
+![Alt Tamanho x Iterações](./pi/lonely/4-Jump%20Search_14.png)
+
 ###### Tamanho x Tempo médio
+![Alt Tamanho x Tempo médio](./pi/lonely/4-Jump%20Search_13.png)
 <!--Opnião-->
 	
 
@@ -287,7 +290,9 @@ Fibonacci Search é uma técnica baseada em comparação que usa números Fibona
 O(log(n)) // ...
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
+![Alt Tamanho x Iterações](./pi/lonely/7-Fibonacci%20Search_14.png)
 ###### Tamanho x Tempo médio
+![Alt Tamanho x Tempo médio](./pi/lonely/7-Fibonacci%20Search_13.png)
 <!--Opnião-->
 	
 ## Comparações Gerais
