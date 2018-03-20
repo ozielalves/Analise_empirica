@@ -318,11 +318,11 @@ Devido a eliminação de ranges, em seu pior caso a busca Fibonacci acaba se tor
 ### Recursivos x Jump Search
 #### Tamanho x Iterações
 [!Alt Jump Search x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_4-Jump%20Search_14.png)
-[!Alt Jump Search x Recursive Ternary](./pi/versus/Jump%20Search_6-Recursive%20Ternary_14.png)
+[!Alt Jump Search x Recursive Ternary](./pi/versus/4-Jump%20Search_6-Recursive%20Ternary_14.png)
 
 #### Tamanho x Tempo
 [!Alt Jump Search x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_4-Jump%20Search_13.png)
-[!Alt Jump Search x Recursive Ternary](./pi/versus/Jump%20Search_6-Recursive%20Ternary_13.png)
+[!Alt Jump Search x Recursive Ternary](./pi/versus/4-Jump%20Search_6-Recursive%20Ternary_13.png)
 
 ### Geral
 <!-- Grafico Geral -->
