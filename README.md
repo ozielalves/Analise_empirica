@@ -250,18 +250,33 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 
 ### Jump Search
 <!--Breve explicação-->
-Como a Binary Search, Jump Search é um algoritmo de pesquisa para arrays ordenados. A idéia básica é verificar menos elementos (do que a busca linear) saltando por etapas fixas ou ignorando alguns elementos no lugar de pesquisar todos os elementos.
+Como a Binary Search, Jump Search, ou Block Search é um algoritmo de pesquisa para arrays ordenados. A idéia básica é verificar menos elementos (do que a busca linear) saltando por etapas fixas ou ignorando alguns elementos no lugar de pesquisar todos os elementos.
 <!--Pseudo-Código-->
-Dado um conjunto _L_ de tamanho  _n_, com _x_ elementos, com um alvo `value`, a seguinte subrotina é implementada.
+Dada um vetor ordenado _L_, seu comprimento _n_ e uma chave de busca _s_.
 
-1. O tamanho do vetor `n` é calculado e é passado como parametro para o calculo de sua raiz quadrada, definida como `m`
-2. O vetor é percorrido e a primeira comparação se baseia no *floor* da raiz de `n`   
-	1. Se `value` for igual a `m`, retorna o endereço de `m` no vetor
-	2. Se `value` for menor que  o valor comparado no vetor, segue uma busca linear a partir do incio do vetor até o ponto de comparação em questão
-		1. ​
+Saída: a posição de **s** em **L**, ou _nada_ se **s** não estiver em **L**.
+
+  *a* ← 0
+  *b* ← ⌊*√n*⌋
+
+  Enquanto `Lmin((b, n) -1)` < **s** faça:
+    *a ← b
+     b ← b* + ⌊*√n*⌋
+    se um ≥ _n_ então
+      devolva _nada_
+
+  Enquanto `La` < **s** faça:
+    *a ← a + 1*
+    se *a = min (b, n)*
+      devolva _nada_
+
+  Se `La` = **s** então
+    devolver 1
+  Se não
+    devolva _nada_
 
 <!--Complexidade-->
-√n // ...
+Devido a comparação dos blocos formados,ambas as etapas do algoritmo observam, no máximo, √n itens, o que leva o algoritmo a apresentar em seu pior caso complexidade O(*√n*).
 <!--Gráficos exclusivos-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
