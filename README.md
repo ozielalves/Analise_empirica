@@ -284,7 +284,7 @@ Fibonacci Search é uma técnica baseada em comparação que usa números Fibona
 
 3. Uma vez que pode haver um único elemento restante para comparação, verifica se `fib1` é 1. Se sim, compara `value` com o vetor restante. Se coincidir, retorna o endereço.
 <!--Complexidade-->
-O(log(n)) // ...
+Devido a eliminação de ranges, em seu pior caso a busca Fibonacci acaba se tornando uma função logarítimica de complexidade O(*log n*).
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ###### Tamanho x Tempo médio
