@@ -5,6 +5,67 @@ Disciplina: Estrutura de Dados Básicas I, Universidade Federal do Rio Grande do
 - [Felipe Ramos](https://github.com/felipecramos/)
 - [Oziel Alves](https://github.com/ozielalves/)
 
+## Sumário
+
++ [Objetivos](#objetivos)
++ Instruções de Uso
+  + Dependências
+    + Python3, python-pip, python3-tk
+    + Matplotlib
+    + G++ Compiler
+  + Compilação
+  + Execução
+    + Plotagem de gráficos
+  + Organização de Amostras
+  + Informações sobre as buscas
++ Apresentação dos Algoritmos
+  + [Busca Sequencial](#busca-sequencial)
+    + Iterativa
+      + Gráficos exclusivos
+      + Tempo x Iterações
+      + Tamanho x Tempo médio
+  + Busca Binária
+    + Iterativa
+      + Gráficos exclusivos
+      + Tempo x Iterações
+      + Tamanho x Tempo médio
+    + Recursiva
+      + Gráficos exclusivos
+      + Tempo x Iterações
+      + Tamanho x Tempo médio
+  + Busca Ternária
+    + Iterativa
+      - Gráficos exclusivos
+      - Tempo x Iterações
+      - Tamanho x Tempo médio
+    + Recursiva
+      - Gráficos exclusivos
+      - Tempo x Iterações
+      - Tamanho x Tempo médio
+  + Jump Search
+    + Gráficos exclusivos
+    + Tempo x Iterações
+    + Tamanho x Tempo médio
+  + Busca Fibonacci
+    + Gráficos exclusivos
+    + Tamanho x Iterações
+    + Tamanho x Tempo médio
++ Comparações Gerais
+  + Recursivos x Iterativos
+    + Busca Binária
+    + Busca Ternária
+  + Recursivos x Busca Fibonacci
+    + Tamanho x Iterações
+    + Tamanho x Tempo
+  + Recursivos x Jump Search
+    + Tamanho x Iterações
+    + Tamanho x Tempo
++ Condições de Testes
+  + Informações sobre a máquina utilizada
+  + Informações sobre os parametros utilizados
+  + Softwares utilizados
+
+
 ## Objetivos
 Analisar e avaliar o comportamento **assintótico** dos algoritmos em relação ao seu tempo de execução e número de iterações. Os cenários irão simular a execução dos algoritmos para diversos tamanhos de amostras com tamanhos de elementos *n* crescentes, até atingir o limite da máquina de testes.
 
