@@ -238,10 +238,13 @@ Seja _f(x)_ ser uma função unimodal em algum intervalo [l ; r]. Pegue os dois 
 2. Se `f(m1) > f(m2)`, que a situação é semelhante à anterior, até a simetria. Agora, o máximo exigido não pode estar no lado direito - [m2 ; r], então vá para o segmento [l ; m2]
 3. Se `f(m1) = f(m2)`, a busca deve ser realizada em [m1 ; m2], mas este caso pode ser atribuído a qualquer um dos dois anteriores (para simplificar o código). Mais cedo ou mais tarde, o comprimento do segmento será um pouco menor do que uma constante predeterminada, e o processo pode ser interrompido.
 
-Pontos de escolha `m1` e `m2`:
-i. `m1 = l + (r-l) / 3`
-ii. `m2 = r - (r-l) / 3`
+Pontos de escolha `m1` e `m2`: 
+
+`m1 = l + (r-l) / 3` 
+
+`m2 = r - (r-l) / 3`
 <!--Complexidade-->
+Devido a divisão do vetor em 3 blocos, a função assume comportamento logarítimico em seu pior caso, o que garante complexidade O(*log n*). (NA BASE 3)
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](./pi/lonely/5-Iterative%20Ternary_14.png)
@@ -250,7 +253,6 @@ ii. `m2 = r - (r-l) / 3`
 <!--Opnião-->
 #### Recursiva
 <!--Pseudo-Código-->
-Dada um vetor ordenado _L_, seu comprimento _n_ e uma chave de busca _s_.
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
