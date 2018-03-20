@@ -130,7 +130,7 @@ python3 src/gen_plot.py
 
   *  4º: ***Busca Ternária Iterativa***
 
-  *  5º: ***Busca Ternária Iterativa***
+  *  5º: ***Busca Ternária Recurssiva***
 
   *  6º: ***Jump Search***
 
