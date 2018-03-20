@@ -258,7 +258,7 @@ Dado um conjunto _L_ de tamanho  _n_, com _x_ elementos, com um alvo `value`, a 
 2. O vetor é percorrido e a primeira comparação se baseia no *floor* da raiz de `n`   
 	1. Se `value` for igual a `m`, retorna o endereço de `m` no vetor
 	2. Se `value` for menor que  o valor comparado no vetor, segue uma busca linear a partir do incio do vetor até o ponto de comparação em questão
-		1. 
+		1. ​
 
 <!--Complexidade-->
 √n // ...
@@ -309,19 +309,19 @@ Devido a eliminação de ranges, em seu pior caso a busca Fibonacci acaba se tor
 
 ### Recursivos x Busca Fibonacci
 #### Tamanho x Iterações
-[!Alt Fibonacci x Recursive Binary](./pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_14.png)
-[!Alt Fibonacci x Recursive Ternary](./pi/versus/6-Recursive%20Ternary_7-Fibonacci%20Search_14.png)
+[!Alt Fibonacci x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_14.png)
+[!Alt Fibonacci x Recursive Ternary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/6-Recursive%20Ternary_7-Fibonacci%20Search_14.png)
 #### Tamanho x Tempo
-[!Alt Fibonacci x Recursive Binary](./pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_13.png)
-[!Alt Fibonacci x Recursive Ternary](./pi/versus/6-Recursive%20Ternary_7-Fibonacci%20Search_13.png)
+[!Alt Fibonacci x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_13.png)
+[!Alt Fibonacci x Recursive Ternary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/6-Recursive%20Ternary_7-Fibonacci%20Search_13.png)
 
 ### Recursivos x Jump Search
 #### Tamanho x Iterações
-[!Alt Jump Search x Recursive Binary](./pi/versus/3-Recursive%20Binary_4-Jump%20Search_14.png)
+[!Alt Jump Search x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_4-Jump%20Search_14.png)
 [!Alt Jump Search x Recursive Ternary](./pi/versus/Jump%20Search_6-Recursive%20Ternary_14.png)
 
 #### Tamanho x Tempo
-[!Alt Jump Search x Recursive Binary](./pi/versus/3-Recursive%20Binary_4-Jump%20Search_13.png)
+[!Alt Jump Search x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_4-Jump%20Search_13.png)
 [!Alt Jump Search x Recursive Ternary](./pi/versus/Jump%20Search_6-Recursive%20Ternary_13.png)
 
 ### Geral
