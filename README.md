@@ -300,30 +300,29 @@ O(log(n)) // ...
 
 ### Recursivos x Iterativos
 <!--Breve explicação-->
+
 #### Busca Binária
 <!--Breve explicação-->
-<!--Gráfico-->
-<!--Gráfico2-->
+![Alt Iterativo x Recursivo (Por tempo)](./pi/versus/5-Iterative%20Ternary_6-Recursive%20Ternary_13.png)
 #### Busca Ternária
 <!--Breve explicação-->
-<!--Gráfico-->
-<!--Gráfico2-->
+![Alt Iterativo x Recursivo (Por tempo)](./pi/versus/6-Iterative%20Ternary_6-Recursive%20Ternary_13.png)
 
 ### Recursivos x Busca Fibonacci
 #### Tamanho x Iterações
-<!--Gráfico Binary x Fib-->
-<!--Gráfico Ternary x Fib-->
+[!Alt Fibonacci x Recursive Binary](./pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_14.png)
+[!Alt Fibonacci x Recursive Ternary](./pi/versus/5-Recursive%20Ternary_7-Fibonacci%20Search_14.png)
 #### Tamanho x Tempo
-<!--Gráfico Binary x Fib-->
-<!--Gráfico Ternary x Fib-->
+[!Alt Fibonacci x Recursive Binary](./pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_13.png)
+[!Alt Fibonacci x Recursive Ternary](./pi/versus/5-Recursive%20Ternary_7-Fibonacci%20Search_13.png)
 
 ### Recursivos x Jump Search
 #### Tamanho x Iterações
-<!--Gráfico Binary x Jump-->
-<!--Gráfico Ternary x Jump-->
+[!Alt Jump Search x Recursive Binary](./pi/versus/3-Recursive%20Binary_7-Jump%20Search_14.png)
+[!Alt Jump Search x Recursive Ternary](./pi/versus/3-Recursive%20Ternary_7-Jump%20Search_14.png)
 #### Tamanho x Tempo
-<!--Gráfico Binary x Jump-->
-<!--Gráfico Ternary x Jump-->
+[!Alt Jump Search x Recursive Binary](./pi/versus/3-Recursive%20Binary_7-Jump%20Search_13.png)
+[!Alt Jump Search x Recursive Ternary](./pi/versus/3-Recursive%20Ternary_7-Jump%20Search_13.png)
 
 ### Geral
 <!-- Grafico Geral -->
