@@ -256,15 +256,15 @@ Dada um vetor ordenado _L_, seu comprimento _n_ e uma chave de busca _s_.
 
 Saída: a posição de **s** em **L**, ou _nada_ se **s** não estiver em **L**.
 
-`*a* ← 0` e `*b* ← ⌊*√n*⌋`
+`a ← 0` e `b ← ⌊√n⌋`
 
 1. Enquanto `Lmin((b, n) -1)` < **s** , Faça: `a ← b` e `b ← b + ⌊√n⌋`
 
 2. Se um ≥ _n_, Então: Devolva _nada_
 
-3. Enquanto `La` < **s** faça: `*a ← a + 1*`
+3. Enquanto `La` < **s** faça: `a ← a + 1`
 
-4. Se `*a = min (b, n)*` Devolva _nada_
+4. Se `a = min (b, n)` Devolva _nada_
 
 5. Se `La` = **s** Então: Devolva 1
 
