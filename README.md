@@ -229,8 +229,19 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 
 ### Busca Ternária
 <!--Breve explicação-->
+Busca Ternária é uma técnica em ciência da computação para encontrar o mínimo ou o máximo de uma função unimodal. Uma busca ternária determina se o mínimo ou o máximo podem ou não estar no primeiro terço do domínio ou se ele pode ou não estar no último terço do domínio e, em seguida, repete o passo para o terceiro restante.
 #### Iterativa
 <!--Pseudo-Código-->
+Dada um vetor ordenado _L_, seu comprimento _n_ e uma chave de busca _s_.
+
+1. Enquanto _verdade_: Se _n_ < _s_: retorne _n_/2
+ = left + (right - left)/3
+        rightThird = right - (right - left)/3
+
+        if f(leftThird) < f(rightThird):
+            left = leftThird
+        else:
+            right = rightThird
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
@@ -240,6 +251,7 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 <!--Opnião-->
 #### Recursiva
 <!--Pseudo-Código-->
+Dada um vetor ordenado _L_, seu comprimento _n_ e uma chave de busca _s_.
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
