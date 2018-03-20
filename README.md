@@ -190,9 +190,9 @@ Podemos esperar que a seguinte função descreva o comportamento do algoritmo em
 <!--Gráficos exclusivos-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/1-Sequential%20Search_14.png)
+![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/pi/lonely/1-Sequential%20Search_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/1-Sequential%20Search_13.png)
+![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/pi/lonely/1-Sequential%20Search_13.png)
 <!--Opnião-->
 
 
@@ -214,17 +214,17 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Iterative%20Binary_14.png)
+![Alt Tamanho x Iterações](./pi/lonely/2-Iterative%20Binary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Iterative%20Binary_13.png)
+![Alt Tamanho x Tempo médio](2-Iterative%20Binary_13.png)
 <!--Opnião-->
 #### Recursiva
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/3-Recursive%20Binary_14.png)
+![Alt Tamanho x Iterações](3-Recursive%20Binary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/3-Recursive%20Binary_13.png)
+![Alt Tamanho x Tempo médio](3-Recursive%20Binary_13.png)
 <!--Opnião-->
 
 ### Busca Ternária
@@ -234,9 +234,9 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 <!--Complexidade-->
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
-![Alt Tamanho x Iterações](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Iterative%20Ternary_14.png)
+![Alt Tamanho x Iterações](4-Iterative%20Ternary_14.png)
 ###### Tamanho x Tempo médio
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Iterative%20Ternary_13.png)
+![Alt Tamanho x Tempo médio](4-Iterative%20Ternary_13.png)
 <!--Opnião-->
 #### Recursiva
 <!--Pseudo-Código-->
