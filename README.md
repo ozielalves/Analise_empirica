@@ -259,24 +259,17 @@ Saída: a posição de **s** em **L**, ou _nada_ se **s** não estiver em **L**.
 *a* ← 0
 *b* ← ⌊*√n*⌋
 
-1. Enquanto `Lmin((b, n) -1)` < **s** faça:
-	*a ← b
-	b ← b* + ⌊*√n*⌋
+1. Enquanto `Lmin((b, n) -1)` < **s** , Faça: `a ← b` e `b ← b + ⌊√n⌋`
 
-2. Se um ≥ _n_ então:
-	devolva _nada_
+2. Se um ≥ _n_, Então: Devolva _nada_
 
-3. Enquanto `La` < **s** faça:
-	*a ← a + 1*
+3. Enquanto `La` < **s** faça: `*a ← a + 1*`
 
-4. Se *a = min (b, n)*
-	devolva _nada_
+4. Se `*a = min (b, n)*` Devolva _nada_
 
-5. Se `La` = **s** então
-	devolver 1
+5. Se `La` = **s** Então: Devolva 1
 
-6. Se não
-	devolva _nada_
+6. Se não: Devolva _nada_
 
 <!--Complexidade-->
 Devido a comparação dos blocos formados,ambas as etapas do algoritmo observam, no máximo, √n itens, o que leva o algoritmo a apresentar em seu pior caso complexidade O(*√n*).
