@@ -8,11 +8,12 @@
 #include <iomanip>
 #include <iterator>
 
-// Confere para fibsearch
-long int *min(long int *x, long int *y);
 
-// Fibonacci sequence
-long int *Fibseq(long int size);
+// Confere para fibsearch
+long int min(long int x, long int y);
+
+// Generate a fibonacci sequence
+long int *makeFib(long int size);
 
 // A simple array print function
 void pArray( long int *, long int * );

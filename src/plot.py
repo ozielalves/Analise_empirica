@@ -149,10 +149,10 @@ for file in filenames:
         ax1.plot(plot_x, plot_y, label=file[2:-4])
 
 # Some configs to the figure
-if(len(plot_title) > 1):
-    plt.title(makeTitle(plot_title))
-else:
-    plt.title(makeTitle(plot_title))
+#  if(len(plot_title) > 1):
+    #  plt.title(makeTitle(plot_title))
+#  else:
+    #  plt.title(makeTitle(plot_title))
 
 plt.subplots_adjust(left=0.17, bottom=0.13, right=0.93, top=0.93)
 

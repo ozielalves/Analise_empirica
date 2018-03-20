@@ -7,7 +7,7 @@ def genBinStr(sequence):
         binstr += str(element)
     return binstr
 
-command_list = set(list(permutations([1,0,0,0,0,0])))
+command_list = set(list(permutations([1,0,0,0,0,0,0])))
 
 command_header = "python3 src/plot.py"
 

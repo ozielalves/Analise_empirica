@@ -13,12 +13,14 @@
 #include <iomanip>
 #include <cmath>
 #include <new>
+#include <stdlib.h>
 
 #define DATADIR "data/"
 
 int main(int argc, char **argv) {
 	system("clear");
 	system("rm -rf data/*");
+	// makeFib(20);
 	
 	// Default message headers
 	std::string status 	= "\e[1;32mSTATUS: \e[0;0m";
@@ -28,13 +30,14 @@ int main(int argc, char **argv) {
 	long int array_size, times_to_run;
 	long int array_increment = pow(10, 6);
 	int number_of_arrays = 25;
+	std::string algorithms_to_run;
 	
 	// showArgs(&argc, argv);
 
 	// An error message if the user leave argv empty
-	if(argc != 5){
+	if(argc != 6){
 		std::cout << error << "Please, use:" << std::endl;
-		std::cout << "./bin/analise <array_size> <times> <increment(10 ^ x)> <number_of_arrays>";
+		std::cout << "./bin/analise <array_size> <times> <increment(10 ^ x)> <number_of_arrays> <algorithms_to_run>";
 		std::cout << min << std::endl;
 		return 1;
 	} else {
@@ -46,6 +49,8 @@ int main(int argc, char **argv) {
 		std::cout << status << "array_increment = " << array_increment << min;
 		number_of_arrays = atol(argv[4]);
 		std::cout << status << "number_of_arrays = " << number_of_arrays << min;
+		algorithms_to_run = argv[5];
+		std::cout << status << "algorithms_to_run = " << algorithms_to_run << min;
 	}
 	long int SEARCH_FOR = 2 * array_size + pow(10, array_increment);
 
@@ -62,23 +67,23 @@ int main(int argc, char **argv) {
 	const int n_functions = 7; // VERY IMPORTANT CONSTANT
 
 	long int *(*pointer[n_functions])(long int *, long int *, long int, long int *);
-	pointer[0] = &i_binary;
-	pointer[1] = &r_binary;
-	pointer[2] = &jsearch;
-	pointer[3] = &ssearch;
-	pointer[4] = &i_ternary;
-	pointer[5] = &r_ternary;
+	pointer[0] = &ssearch;
+	pointer[1] = &i_binary;
+	pointer[2] = &r_binary;
+	pointer[3] = &i_ternary;
+	pointer[4] = &r_ternary;
+	pointer[5] = &jsearch;
 	pointer[6] = &fibonacci;
 
 	// Here the names are defined for the output files
 	std::string names[n_functions];
-	names[0] = "Iterative Binary";
-	names[1] = "Recursive Binary";
-	names[2] = "Jump Search";
-	names[3] = "Sequential Search";
-	names[4] = "Interative Ternary";
-	names[5] = "Recursive Ternary";
-	names[6] = "Fibonacci search";
+	names[0] = "1-Sequential Search";
+	names[1] = "2-Iterative Binary";
+	names[2] = "3-Recursive Binary";
+	names[3] = "5-Interative Ternary";
+	names[4] = "6-Recursive Ternary";
+	names[5] = "4-Jump Search";
+	names[6] = "7-Fibonacci Search";
 
 	// Creates the vector that later we'll be working on
 	long int *big_random_vector = cArray(array_size + (number_of_arrays * array_increment));
@@ -118,18 +123,19 @@ int main(int argc, char **argv) {
 			// each for, one of the correspondent algorithms
 			// gets to run thru run_algorithm
 			for(auto run_algorithm : pointer) {
-				start = std::chrono::steady_clock::now();
+				// std::cout << "Algorithm[" << c << "]" << algorithms_to_run[c] << std::endl;
+				if( (int) algorithms_to_run[c] == '1' ) {
+					start = std::chrono::steady_clock::now();
 
-				// --- TIMER STARTS HERE --- //
-				run_algorithm ( big_random_vector, big_random_vector + array_size, SEARCH_FOR, &iterations[c] );
-				// --- TIMER ENDS HERE --- //
+					// --- TIMER STARTS HERE --- //
+					run_algorithm ( big_random_vector, big_random_vector + array_size, SEARCH_FOR, &iterations[c] );
+					// --- TIMER ENDS HERE --- //
 
-				stop = std::chrono::steady_clock::now();
-				auto timer = (stop - start);
+					stop = std::chrono::steady_clock::now();
+					auto timer = (stop - start);
 
-				sum_times[c] += std::chrono::duration <double, std::nano> (timer).count();
-
-
+					sum_times[c] += std::chrono::duration <double, std::nano> (timer).count();
+				}
 				c++;
 			}			
 		}
