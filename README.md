@@ -256,8 +256,7 @@ Dada um vetor ordenado _L_, seu comprimento _n_ e uma chave de busca _s_.
 
 Saída: a posição de **s** em **L**, ou _nada_ se **s** não estiver em **L**.
 
-*a* ← 0
-*b* ← ⌊*√n*⌋
+`*a* ← 0` e `*b* ← ⌊*√n*⌋`
 
 1. Enquanto `Lmin((b, n) -1)` < **s** , Faça: `a ← b` e `b ← b + ⌊√n⌋`
 
