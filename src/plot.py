@@ -6,21 +6,23 @@ showGraphic = False
 
 datadir = "data/"
 imagedir = "images/"
-os.system("mkdir " + imagedir)
+
+if imagedir[:-1] not in os.listdir(datadir):
+    # If there's no folder named "image"
+    os.system("mkdir " + imagedir)
 
 filenames = os.listdir(datadir)
 filenames.sort()
 
 if ".DS_Store" == filenames[0]:
+    # System trash files
     del filenames[0]
-
-print("Dir order:")
-print(filenames)
 
 # ===================================== BEGIN OF FUNCTION SECTION ============
 
 
 def genFileName(names, bin_columns, extension):
+    # Generates a filename for output plots
     final_filename = ""
 
     for name in names:
@@ -32,8 +34,6 @@ def genFileName(names, bin_columns, extension):
 
     return final_filename
 
-#  def genPlotTitle(bin_files, filenames):
-#
 
 def makeTitle(sequence):
     # Unites a list of words into one
@@ -49,9 +49,11 @@ def convertBin(binstr):
     # Convert the binary string into indexes
     files_list = []
     counter = range(len(binstr))
+
     for char, index in zip(binstr, counter):
-        if(int(char) == True):
+        if int(char) == 1:
             files_list.append(str(index+1))
+
     return files_list
 
 
@@ -77,6 +79,7 @@ def HaveToRead(filename, process_files):
         return False
 
 def setName(number):
+    # An auto axis namer
     number = int(number)
     names = [
         "buf",
@@ -87,29 +90,20 @@ def setName(number):
     ]
     return names[number]
 
-
 # ======================================= END OF FUNCTION SECTION ============
+
 
 try:
     files_to_work = str(sys.argv[1])
     columns_to_work = str(sys.argv[2])
-    save_path = str(sys.argv[3])
-    plot_title = sys.argv[4:]
 
 except IndexError:
-    print("Error, please read the documentation")
+    print("Error, invalid parameters.\n"
+          "Please, read the docs!")
     exit()
 
 process_files = convertBin(files_to_work)
-#  print("~ Debug Print:")
-#  print("\tfiles_to_work:")
-#  print("\t", files_to_work)
-#  print("\tprocess_files:")
-#  print("\t", process_files)
-
 process_columns = convertBin(columns_to_work)
-#  print("\tprocess_columns:")
-#  print("\t", process_columns)
 
 if len(process_columns) > 2:
     # If the user wants to plot more than 2 axis (columns)
@@ -148,11 +142,6 @@ for file in filenames:
         # And then, finally plot
         ax1.plot(plot_x, plot_y, label=file[2:-4])
 
-# Some configs to the figure
-#  if(len(plot_title) > 1):
-    #  plt.title(makeTitle(plot_title))
-#  else:
-    #  plt.title(makeTitle(plot_title))
 
 plt.subplots_adjust(left=0.17, bottom=0.13, right=0.93, top=0.93)
 
@@ -163,7 +152,6 @@ outFilename = genFileName(names_worked, process_columns, ".png")
 plt.legend()
 
 try:
-    print("Showing Graphics")
     plt.savefig(imagedir + outFilename, dpi=300, bbox_inches='tight')
     if showGraphic is True:
         plt.show()

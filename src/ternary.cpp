@@ -9,7 +9,7 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 
 	while(first < last)
 	{
-		(*counter) += 1;
+		(*counter)++;
 		left = first + ( last - first )/(long int)3;
 		right = left + ( last - first )/(long int)3;
 
@@ -41,11 +41,10 @@ long int *i_ternary( long int *first, long int *last, long int value, long int *
 
 long int *r_ternary( long int *first, long int *last, long int value, long int *counter )
 {
-	(*counter) ++;
-	if(first == last)
-	{
+	if(first == last){
 		return last;
 	}
+	(*counter)++;
 	
 	long int *last_backup = last;
 	long int *left = first + ( last - first )/(long int)3;

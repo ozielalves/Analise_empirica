@@ -270,8 +270,37 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 	
 ## Comparações Gerais
 <!--Breve explicação-->
-### Tamanho x Iterações
-### Tamanho x Tempo médio 
+
+### Recursivos x Iterativos
+<!--Breve explicação-->
+#### Busca Binária
+<!--Breve explicação-->
+<!--Gráfico-->
+<!--Gráfico2-->
+#### Busca Ternária
+<!--Breve explicação-->
+<!--Gráfico-->
+<!--Gráfico2-->
+
+### Recursivos x Busca Fibonacci
+#### Tamanho x Iterações
+<!--Gráfico Binary x Fib-->
+<!--Gráfico Ternary x Fib-->
+#### Tamanho x Tempo
+<!--Gráfico Binary x Fib-->
+<!--Gráfico Ternary x Fib-->
+
+### Recursivos x Jump Search
+#### Tamanho x Iterações
+<!--Gráfico Binary x Jump-->
+<!--Gráfico Ternary x Jump-->
+#### Tamanho x Tempo
+<!--Gráfico Binary x Jump-->
+<!--Gráfico Ternary x Jump-->
+
+### Geral
+<!-- Grafico Geral -->
+<!-- Gráfico Geral2 -->
 
 <!--Conclusões finais-->
 
@@ -287,9 +316,9 @@ Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba s
 + **Sistema** macOS High Sierra 10.13.3
 
 ### Informações sobre os parametros utilizados
-Todos os gráficos gerados neste documento (README.md) foram gerados utilizando os seguintes parâmetros:
+Todos as informações interpretadas neste documento foram obtidas utilizando o seguinte comando::
 ```bash
-# Irá executar ./bin/analise 10 200 6 25; python3 src/gen_plot.py
+# Irá compilar e executar o arquivo binário, em seguida o script gerador de gráficos (src/gen_plot.py)
 make run
 ```
 ### Softwares utilizados

@@ -2,6 +2,14 @@
 #include <iostream>
 #include <iterator>
 
+unsigned long long int cPow(long int n, long int e){
+	unsigned long long int result = 1;
+	for(auto i = 1; i <= e; i++){
+		result *= n;
+	}
+	return result;
+}
+
 long int min(long int x, long int y) { 
 	return (x <= y) ? x : y; 
 }

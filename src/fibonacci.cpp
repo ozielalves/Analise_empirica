@@ -46,5 +46,4 @@ long int *fibonacci( long int *first, long int *last, long int value, long int *
 	}
 	
 	return last_backup; // Element not found	
-		
 }

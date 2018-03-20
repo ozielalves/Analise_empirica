@@ -7,7 +7,8 @@
 #include <random>
 #include <iomanip>
 #include <iterator>
-
+// My own pow function
+unsigned long long int cPow(long int n, long int e);
 
 // Confere para fibsearch
 long int min(long int x, long int y);
