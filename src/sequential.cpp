@@ -5,8 +5,10 @@ long int *ssearch( long int *first, long int *last, long int value, long int *co
 	for( long int *i = first; i < last; i++ )
 	{
 		*counter += 1;
-		if ( *i == value )
+		if ( *i == value ){
+			*counter += 1;
 			return i;
+		}
 	}
 	return last; // STUB
 }

@@ -10,6 +10,7 @@ long int *i_binary( long int *first, long int *last, long int value, long int *c
 		long int *middle = first + (last - first)/(long int)2;
 		if(*middle == value)
 		{
+			*counter += 1;
 			// if value *is* middle
 			return middle;
 		} 
@@ -17,24 +18,26 @@ long int *i_binary( long int *first, long int *last, long int value, long int *c
 	       	{
 			if(*middle > value)
 			{
+				*counter += 2;
 				// if the value is in smaller than middle
 				last = middle;
 			}
 			else
 			{
+				*counter += 2; 
 				// if the value is bigger than middle
 				first = middle + 1;
 			}	
 		}		
 	}	
-	*counter+=1;
+	// *counter+=1;
 	return last_backup;
 }
 
 long int *r_binary( long int *first, long int *last, long int value, long int *counter )
 {
-	(*counter) ++;
 	if(first == last){
+		*counter += 1;
 		return last; 
 	}
 
@@ -43,14 +46,16 @@ long int *r_binary( long int *first, long int *last, long int value, long int *c
 	long int *middle = first + (last - first)/(long int)2;	
 	
 	if(*middle == value){
-		// if value *is* middle
+		*counter += 1;
 		return middle;
 	} else {
 		if(*middle > value){
+			*counter += 2;
 			// if the value is in smaller than middle
 	    	last = middle;
 			return r_binary( first, last, value, counter );
 	    }else{
+			*counter += 2;
 			 // if the value is bigger than middle
 		    first = middle + 1;
 			return r_binary( first, last, value, counter );

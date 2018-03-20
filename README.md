@@ -8,62 +8,62 @@ Disciplina: Estrutura de Dados Básicas I, Universidade Federal do Rio Grande do
 ## Sumário
 
 + [Objetivos](#objetivos)
-+ Instruções de Uso
-  + Dependências
-    + Python3, python-pip, python3-tk
-    + Matplotlib
-    + G++ Compiler
-  + Compilação
-  + Execução
-    + Plotagem de gráficos
-  + Organização de Amostras
-  + Informações sobre as buscas
-+ Apresentação dos Algoritmos
++ [Instruções de Uso](#instruções-de-uso)
+  + [Dependências](#dependências)
+    + [Python3, python-pip, python3-tk](#python3-python3-pip-python3-tk)
+    + [Matplotlib](#Matplotlib)
+    + [G++ Compiler](#g++-compiler)
+  + [Compilação](#compilação)
+  + [Execução](#execução)
+    + [Plotagem de gráficos](#plotagem-de-gráficos)
+  + [Organização de Amostras](#organização-das-amostras)
+  + [Informações sobre as buscas](#informações-sobre-as-buscas)
++ [Apresentação dos Algoritmos](#apresentação-dos-algoritmos)
   + [Busca Sequencial](#busca-sequencial)
-    + Iterativa
-      + Gráficos exclusivos
-      + Tempo x Iterações
-      + Tamanho x Tempo médio
-  + Busca Binária
-    + Iterativa
-      + Gráficos exclusivos
-      + Tempo x Iterações
-      + Tamanho x Tempo médio
-    + Recursiva
-      + Gráficos exclusivos
-      + Tempo x Iterações
-      + Tamanho x Tempo médio
-  + Busca Ternária
-    + Iterativa
-      - Gráficos exclusivos
-      - Tempo x Iterações
-      - Tamanho x Tempo médio
-    + Recursiva
-      - Gráficos exclusivos
-      - Tempo x Iterações
-      - Tamanho x Tempo médio
-  + Jump Search
-    + Gráficos exclusivos
-    + Tempo x Iterações
-    + Tamanho x Tempo médio
-  + Busca Fibonacci
-    + Gráficos exclusivos
-    + Tamanho x Iterações
-    + Tamanho x Tempo médio
-+ Comparações Gerais
-  + Recursivos x Iterativos
-    + Busca Binária
-    + Busca Ternária
-  + Recursivos x Busca Fibonacci
-    + Tamanho x Iterações
-    + Tamanho x Tempo
-  + Recursivos x Jump Search
-    + Tamanho x Iterações
-    + Tamanho x Tempo
-+ Condições de Testes
-  + Informações sobre a máquina utilizada
-  + Informações sobre os parametros utilizados
-  + Softwares utilizados
+    + [Iterativa](#iterativa)
+      + [Gráficos exclusivos](#gráficos-exclusivos)
+      + [Tempo x Iterações](#tempo-x-iterações)
+      + [Tamanho x Tempo médio](#tamanho-x-tempo-médio)
+  + [Busca Binária](#busca-binária)
+    + [Iterativa](#iterativa-1)
+      + [Gráficos exclusivos](#)
+      + [Tempo x Iterações](#)
+      + [Tamanho x Tempo médio](#)
+    + [Recursiva](#recursiva)
+      + [Gráficos exclusivos](#)
+      + [Tempo x Iterações](#)
+      + [Tamanho x Tempo médio](#)
+  + [Busca Ternária](#)
+    + [Iterativa](#iterativa-2)
+      + [Gráficos exclusivos](#)
+      + [Tempo x Iterações](#)
+      + [Tamanho x Tempo médio](#)
+    + [Recursiva](#)
+      + [Gráficos exclusivos](#)
+      + [Tempo x Iterações](#)
+      + [Tamanho x Tempo médio](#)
+  + [Jump Search](#)
+    + [Gráficos exclusivos](#)
+    + [Tempo x Iterações](#)
+    + [Tamanho x Tempo médio](#)
+  + [Busca Fibonacci](#)
+    + [Gráficos exclusivos](#)
+    + [Tamanho x Iterações](#)
+    + [Tamanho x Tempo médio](#)
++ [Comparações Gerais](#)
+  + [Recursivos x Iterativos](#)
+    + [Busca Binária](#)
+    + [Busca Ternária](#)
+  + [Recursivos x Busca Fibonacci](#)
+    + [Tamanho x Iterações](#)
+    + [Tamanho x Tempo](#)
+  + [Recursivos x Jump Search](#)
+    + [Tamanho x Iterações](#)
+    + [Tamanho x Tempo](#)
++ [Condições de Testes](#)
+  + [Informações sobre a máquina utilizada](#)
+  + [Informações sobre os parametros utilizados](#)
+  + [Softwares utilizados](#)
 
 
 ## Objetivos
