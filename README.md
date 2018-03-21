@@ -224,7 +224,6 @@ Todos os algoritmos serão testados contra seu pior caso, ou seja, quando $k$ n�
 ## Apresentação dos Algoritmos
 
 ### Busca Sequencial
-<!--Breve explicação-->
 Também conhecida como busca linear, é um algoritmo de busca que procura por um elemento dado um conjunto, iterativamente, e checa se aquele é o elemento buscado.
 
 #### Iterativa
@@ -238,8 +237,6 @@ Dado um conjunto $L$ de $n$ elementos, com um alvo $T$, a seguinte sub-rotina é
 
 4. Se $i < n$, iremos para o passo 2, se não, a busca termina sem sucesso.
 
-<!--Complexidade-->
-
 Para uma lista com $n$ elementos, o melhor cenário possivel é quando o valor buscado está na primeira posição do conjunto, enquanto que seu pior caso é quando $T$ não pertence ao conjunto $L$.
 
 Podemos esperar que $$\mathcal{O}(n)$$ descreva o comportamento do algoritmo em relação ao número de elementos do conjunto:
@@ -251,7 +248,6 @@ Podemos esperar que $$\mathcal{O}(n)$$ descreva o comportamento do algoritmo em 
 ![Alt Tamanho x Iterações](./pi/lonely/1-Sequential%20Search_14.png)
 ###### Tamanho x Tempo médio
 ![Alt Tamanho x Tempo médio](./pi/lonely/1-Sequential%20Search_13.png)
-<!--Opnião-->
 
 
 ### Busca Binária
@@ -289,10 +285,8 @@ Apesar de possuir a mesma complexidade de tempo da Binária Iterativa, sua vers�
 É de fato um método de busca imensamente mais eficiente que o algoritmo de busca linear. Porém uma de suas desvantagens aparece quando o vetor não é ordenado (seja por impossibilidade, fluxo de entrada constante, números repetidos ...) ou quando o vetor implementado não suporta *random acess*, como por exemplo, listas encadeadas.
 
 ### Busca Ternária
-<!--Breve explicação-->
 Busca Ternária é uma técnica em ciência da computação para encontrar o mínimo ou o máximo de uma função unimodal. Uma busca ternária determina se o mínimo ou o máximo podem ou não estar no primeiro terço do domínio ou se ele pode ou não estar no último terço do domínio e, em seguida, repete o passo para o terceiro restante.
 #### Iterativa
-<!--Pseudo-Código-->
 Seja $f(x)$ uma função unimodal num intervalo $[ l ; r ]$. Pega-se dois pontos $m1$ e $m2$ no segmento: $l < m1 < m2 < r$ 
 
 Depois, segue-se três passos:
@@ -411,7 +405,6 @@ Quando os elementos estão em uma memória não totalmente uniforme (i.e. quando
 
 ## Condições de Testes
 ### Informações sobre a maquina utilizada
-<!--Maquina utilizada-->
 + **Macbook Pro** (13-inch, 2017)
 
 + **Processador** 2,3 GHz Intel Core i5
