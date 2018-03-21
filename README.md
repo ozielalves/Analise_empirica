@@ -249,17 +249,8 @@ Podemos esperar que $$\mathcal{O}(n)$$ descreva o comportamento do algoritmo em 
 ###### Tamanho x Tempo médio
 ![Alt Tamanho x Tempo médio](./pi/lonely/1-Sequential%20Search_13.png)
 
+
 ### Busca Binária
-<<<<<<< HEAD
-
-<!--Breve explicação-->
-
-#### Iterativa
-
-<!--Pseudo-Código-->
-
-<!--Complexidade-->
-=======
 Também conhecida como busca logaritmica, é um algoritmo de busca baseado na técnica *divide and conquer* e dependente de uma ordenação, que melhora notávelmente sua performance, visto que a cada iteração, é descartado metade do conjunto.
 #### Iterativa
 Dado um conjunto $A$ de $n$ elementos ordenados e um alvo $T$, é seguida a sub-rotina para encontrar o elemento:
@@ -273,59 +264,22 @@ Dado um conjunto $A$ de $n$ elementos ordenados e um alvo $T$, é seguida a sub-
 
 
 
-<<<<<<< HEAD
-Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba se tornando uma função logaritma que, em seu pior caso, irá ter a complexidade de O(*log n*) comparações.
->>>>>>> df0b4ef8e80497f9397cf38e33ff1a04a181c1bb
-=======
 Pelo fato da busca binária utilizar-se do método *divide and conquer*, acaba se tornando uma função logaritma que, em seu melhor caso, o elemento procurado estará exatamente em $\frac{n}{2}$ , já em seu pior caso, irá ter $\mathcal{O} \log_2 n$ comparações.
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 
 ##### Gráficos exclusivos
-
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](./pi/lonely/2-Iterative%20Binary_14.png)
 ###### Tamanho x Tempo médio
-<<<<<<< HEAD
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/2-Iterative%20Binary_13.png)
-
-<!--Opnião-->
-
-#### Recursiva
-<<<<<<< HEAD
-
-<!--Pseudo-Código-->
-
-=======
->>>>>>> df0b4ef8e80497f9397cf38e33ff1a04a181c1bb
-<!--Complexidade-->
-=======
 ![Alt Tamanho x Tempo médio](./pi/lonely/2-Iterative%20Binary_13.png)
 
 #### Recursiva
 
 Apesar de possuir a mesma complexidade de tempo da Binária Iterativa, sua versão recursiva pode variar drasticamente em termos de memória consumida durante a execução (irá depender tanto do compilador quanto das otimizações feitas pelo programador).
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 
 ##### Gráficos exclusivos
-
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](./pi/lonely/3-Recursive%20Binary_14.png)
 ###### Tamanho x Tempo médio
-<<<<<<< HEAD
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/3-Recursive%20Binary_13.png)
-
-<!--Opnião-->
-
-### Busca Ternária
-
-<!--Breve explicação-->
-
-#### Iterativa
-
-<!--Pseudo-Código-->
-
-<!--Complexidade-->
-=======
 ![Alt Tamanho x Tempo médio](./pi/lonely/3-Recursive%20Binary_13.png)
 
 É de fato um método de busca imensamente mais eficiente que o algoritmo de busca linear. Porém uma de suas desvantagens aparece quando o vetor não é ordenado (seja por impossibilidade, fluxo de entrada constante, números repetidos ...) ou quando o vetor implementado não suporta *random acess*, como por exemplo, listas encadeadas.
@@ -349,51 +303,22 @@ Recomendações para $m1$ e $m2$:
 
 
 Devido a divisão recurssiva do vetor por 3, a função, em seu pior caso, assume comportamento logarítimico, o que gera uma complexidade de $\mathcal{O} (log_3 n)$.
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](./pi/lonely/5-Iterative%20Ternary_14.png)
 ###### Tamanho x Tempo médio
-<<<<<<< HEAD
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/4-Iterative%20Ternary_13.png)
-
-<!--Opnião-->
-
-#### Recursiva
-
-<!--Pseudo-Código-->
-
-<!--Complexidade-->
-
-=======
 ![Alt Tamanho x Tempo médio](./pi/lonely/5-Iterative%20Ternary_13.png)
 #### Recursiva
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](./pi/lonely/6-Recursive%20Ternary_14.png)
 ###### Tamanho x Tempo médio
-<<<<<<< HEAD
-![Alt Tamanho x Tempo médio](https://github.com/ozielalves/Analise_empirica/blob/master/images/5-Recursive%20Ternary_14.png)
-
-<!--Opnião-->
-=======
 ![Alt Tamanho x Tempo médio](./pi/lonely/6-Recursive%20Ternary_13.png)
 É uma função pouco usada, visto que a busca binária faz basicamente o mesmo trabalho só que com uma comparação a menos em cada iteração, causando uma complexidade de $2 \log_3(n)$, contra $\log_2(n)$ da busca binária.
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 
 ### Jump Search
-
 <!--Breve explicação-->
-<<<<<<< HEAD
-
-<!--Pseudo-Código-->
-
-<!--Complexidade-->
-
-<!--Gráficos exclusivos-->
-=======
 Como a Binary Search, Jump Search, ou Block Search é um algoritmo de pesquisa para arrays ordenados. A idéia básica é verificar menos elementos (do que a busca linear) saltando por etapas fixas ou ignorando alguns elementos no lugar de pesquisar todos os elementos.
 <!--Pseudo-Código-->
 Dada um vetor ordenado $L$, seu comprimento , queremos achar o elemento $S$.
@@ -411,38 +336,19 @@ Sendo $L_{min(a, b) - 1}$ o menor elemento entre $a$ e $b$:
 
 <!--Complexidade-->
 Devido a comparação dos blocos formados,ambas as etapas do algoritmo observam, no máximo, √n itens, o que leva o algoritmo a apresentar em seu pior caso complexidade $\mathcal{O}\sqrt[]n$.
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](./pi/lonely/4-Jump%20Search_14.png)
 
 ###### Tamanho x Tempo médio
-<<<<<<< HEAD
-
-=======
 ![Alt Tamanho x Tempo médio](./pi/lonely/4-Jump%20Search_13.png)
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 <!--Opnião-->
 
 É de fato uma alternativa melhor que a busca sequencial, porém pior do que a busca binária. Pode ser um algoritmo útil caso empregado em casos específicos bem planejados, tais como um vetor que as chances do elemento buscado estar em uma das posições multiplas de $\sqrt{n}$ seja alta.
 
 ### Busca Fibonacci
-
 <!--Breve explicação-->
-<<<<<<< HEAD
-Fibonacci Search é uma técnica baseada em comparação que usa números Fibonacci para pesquisar um elemento em um vetor ordenado.
-
-<!--Pseudo-Código-->
-1. Encontre o menor número de Fibonacci maior ou igual a value. Deixe este número ser fibM [número Mth Fibonacci]. Deixe que os dois números de Fibonacci que precedem sejam fib1 [(m-1) 'th Fibonacci Number] e fib2 [(m-2)' th Fibonacci Number].
-2. Enquanto o vetor possui elementos a serem inspecionados:
-	a)Compare value com o último elemento da gama coberta por fib2
-	b) if value corresponder, retorna endereço
-	c) else if for menor do que o elemento, mova as três variáveis Fibonacci duas Fibonacci para baixo, indicando a eliminação de cerca de dois terços traseiros do vetor restante.
-	d) else value for maior do que o elemento, mova as três variáveis Fibonacci uma Fibonacci para baixo. Redefinir o deslocamento para o endereço. Juntos, estes indicam a eliminação de cerca de um terço do vetor restante.
-3. Uma vez que pode haver um único elemento restante para comparação, verifica se fib1 é 1. Se sim, compara x com o elemento restante. Se coincidir, retorna o endereço.
-<!--Complexidade-->
-=======
 Fibonacci Search é uma técnica baseada em comparação, em um array ordenado, que empregando a filosofia _divide and conquer_, usa números da sequ6encia Fibonacci para pesquisar um elemento em um determinado vetor.
 
 <!--Pseudo-Código-->
@@ -457,32 +363,19 @@ Fibonacci Search é uma técnica baseada em comparação, em um array ordenado, 
 Uma vez que pode haver um único elemento restante para comparação, verifica se $fib_{m-1}$ é 1. Se sim, compara `value` com o vetor restante. Se coincidir, retorna o endereço.
 
 Devido a eliminação de ranges, em seu pior caso a busca Fibonacci acaba se tornando uma função logarítimica de complexidade $\mathcal{O}\log n$.
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 
 ##### Gráficos exclusivos
 ###### Tamanho x Iterações
 ![Alt Tamanho x Iterações](./pi/lonely/7-Fibonacci%20Search_14.png)
 ###### Tamanho x Tempo médio
-<<<<<<< HEAD
-
-=======
 ![Alt Tamanho x Tempo médio](./pi/lonely/7-Fibonacci%20Search_13.png)
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 <!--Opnião-->
 No geral, a busca fibonacci leva a aproximadamente 4% mais comparações que a busca binária. Porém, sua real vantagem está no fato que só necessita de adições e subtrações (se implementada corretamente), o que torna o trabalho da CPU muito menos danoso do que em divisões (como na binária).
 
 Quando os elementos estão em uma memória não totalmente uniforme (i.e. quando o tempo de acesso a determinadas partes da memória pode variar), ela também pode levar uma pequena vantagem em relação a busca binária pois reduz pouca coisa a quantidade de acessos à memória. 
 
 ## Comparações Gerais
-
 <!--Breve explicação-->
-<<<<<<< HEAD
-
-### Tamanho x Iterações
-
-### Tamanho x Tempo médio 
-=======
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 
 ### Recursivos x Iterativos
 <!--Breve explicação-->
@@ -511,14 +404,7 @@ Quando os elementos estão em uma memória não totalmente uniforme (i.e. quando
 [!Alt Jump Search x Recursive Ternary](./pi/versus/4-Jump%20Search_6-Recursive%20Ternary_13.png)
 
 ## Condições de Testes
-
 ### Informações sobre a maquina utilizada
-<<<<<<< HEAD
-
-<!--Maquina utilizada-->
-
-=======
->>>>>>> b6b689dd6a2f3afe5b3879bfb9ee31f9893940cf
 + **Macbook Pro** (13-inch, 2017)
 
 + **Processador** 2,3 GHz Intel Core i5
