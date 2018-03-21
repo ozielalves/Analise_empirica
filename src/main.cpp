@@ -20,7 +20,6 @@
 int main(int argc, char **argv) {
 	system("clear");
 	system("rm -rf data/*");
-	// makeFib(20);
 	
 	// Default message headers
 	std::string status 	= "\e[1;32mSTATUS: \e[0;0m";
@@ -37,25 +36,45 @@ int main(int argc, char **argv) {
 	// An error message if the user leave argv empty
 	if(argc != 6){
 		std::cout << error << "Please, use:" << std::endl;
-		std::cout << "./bin/analise <array_size> <times> <increment(10 ^ x)> <number_of_arrays> <algorithms_to_run>";
+		std::cout << "./bin/analise [TIC] [NT] [I] [NI] [AS]";
 		std::cout << min << std::endl;
+		std::cout << "\tTIC - Tamanho Inicial do Conjunto";
+		std::cout << std::endl; 
+
+		std::cout << "\t NT - Número de Testes";
+		std::cout << std::endl; 
+
+		std::cout << "\t  I - Incremento";
+		std::cout << std::endl; 
+
+		std::cout << "\t NI - Número de Incrementos";
+		std::cout << std::endl; 
+
+		std::cout << "\t AS - Algoritmos Selecionados";
+		std::cout << std::endl; 
+
+		std::cout << "\nFor more info, please visit ozielalves/Analise_empirica." << std::endl;
+
 		return 1;
 	} else {
-		array_size = atol(argv[1]);
+		array_size = atoll(argv[1]);
 		std::cout << status << "array_size = " << array_size << min;
-		times_to_run = atol(argv[2]);
+		times_to_run = atoll(argv[2]);
 		std::cout << status << "times_to_run = " << times_to_run << min;
 		array_increment = pow(10, atol(argv[3]));
 		std::cout << status << "array_increment = " << array_increment << min;
-		number_of_arrays = atol(argv[4]);
+		number_of_arrays = atoll(argv[4]);
 		std::cout << status << "number_of_arrays = " << number_of_arrays << min;
 		algorithms_to_run = argv[5];
 		std::cout << status << "algorithms_to_run = " << algorithms_to_run << min;
 	}
-	long int SEARCH_FOR = 2 * array_size + pow(10, array_increment);
+	long int SEARCH_FORN = -9391932919980;
+	long int SEARCH_FOR  =  1000000000000;
 
-	bp();
-	std::cout << status << "Running..." << min;
+
+	std::cout << status << "Searching for " << SEARCH_FOR << " element." << min;
+bp();
+	std::cout << status << "Processing..." << min;
 
 	/*
 	 * Here are the notorious function pointers
@@ -80,7 +99,7 @@ int main(int argc, char **argv) {
 	names[0] = "1-Sequential Search";
 	names[1] = "2-Iterative Binary";
 	names[2] = "3-Recursive Binary";
-	names[3] = "5-Interative Ternary";
+	names[3] = "5-Iterative Ternary";
 	names[4] = "6-Recursive Ternary";
 	names[5] = "4-Jump Search";
 	names[6] = "7-Fibonacci Search";
@@ -152,7 +171,7 @@ int main(int argc, char **argv) {
 		
 
 		// Function to print all the results
-		printResults(aSize, array_size, times_to_run, n_functions, sum_times, iterations);
+		// printResults(aSize, array_size, times_to_run, n_functions, sum_times, iterations);
 
 		delete[] sum_times;
 		delete[] iterations;
