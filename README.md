@@ -1,3 +1,7 @@
+---
+typora-root-url: ./pi/versus/5-Iterative Ternary_7-Fibonacci Search_13.png
+---
+
 # Análise Empírica de Algoritmos de Busca
 Disciplina: Estrutura de Dados Básicas I, Universidade Federal do Rio Grande do Norte ([UFRN](http://http://www.ufrn.br))
 
@@ -358,9 +362,8 @@ Fibonacci Search é uma técnica baseada em comparação, em um array ordenado, 
 4. Enquanto o vetor possui elementos a serem inspecionados:
   1. Compara `value` com o último elemento da gama coberta por $fib_{m-2}$
   2. Se `value` corresponder, retorna endereço.
-  3. Se for menor do que `value`, move-se três variáveis Fibonacci duas "Fibonacci" para baixo, indicando a eliminação de cerca de dois terços do vetor restante.
-  4. Se `value` for maior do que o elemento, mova as três variáveis Fibonacci um "Fibonacci" para baixo. Redefina o deslocamento para o endereço. Juntos, estes indicam a eliminação de cerca de um terço do vetor restante.
-Uma vez que pode haver um único elemento restante para comparação, verifica se $fib_{m-1}$ é 1. Se sim, compara `value` com o vetor restante. Se coincidir, retorna o endereço.
+  3. Se $fib_m$ < `value`, reduz $fib_{m-2}$, $fib_{m-1}$ e $fib_m$ em dois números de fibonacci, indicando a eliminação de cerca de dois terços do vetor restante
+  4. Se $fib_m$ for menor que value, reduz $fib{m-2}$, $fib_{m-1}$ e $fib_m$ em três números de fibonacci, redefina o deslocamento para o endereço. Juntos, estes passos indicam a eliminação de cerca de um terço do vetor restante.
 
 Devido a eliminação de ranges, em seu pior caso a busca Fibonacci acaba se tornando uma função logarítimica de complexidade $\mathcal{O}\log n$.
 
@@ -375,33 +378,41 @@ No geral, a busca fibonacci leva a aproximadamente 4% mais comparações que a b
 Quando os elementos estão em uma memória não totalmente uniforme (i.e. quando o tempo de acesso a determinadas partes da memória pode variar), ela também pode levar uma pequena vantagem em relação a busca binária pois reduz pouca coisa a quantidade de acessos à memória. 
 
 ## Comparações Gerais
-<!--Breve explicação-->
-
 ### Recursivos x Iterativos
-<!--Breve explicação-->
 #### Busca Binária
-<!--Breve explicação-->
+
+A busca binária em suas duas versões apresenta complexidade de tempo semelhante, visto o gráfico abaixo. A única diferença entre as duas é que uma irá (provavelmente) consumir mais memória devido a recursividade.
+
 ![Alt Iterativo x Recursivo (Por tempo)](./pi/versus/2-Iterative%20Binary_3-Recursive%20Binary_13.png)
 #### Busca Ternária
-<!--Breve explicação-->
+
+Mesma aspecto observado na binária, única diferença é que a versão recursiva (provavelmente) consumirá mais memória devido a sua recursividade.
+
 ![Alt Iterativo x Recursivo (Por tempo)](./pi/versus/5-Iterative%20Ternary_6-Recursive%20Ternary_13.png)
 
 ### Recursivos x Busca Fibonacci
 #### Tamanho x Iterações
-[!Alt Fibonacci x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_14.png)
-[!Alt Fibonacci x Recursive Ternary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/6-Recursive%20Ternary_7-Fibonacci%20Search_14.png)
+
+[Fibonacci x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_14.png)
+
+[Fibonacci x Recursive Ternary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/6-Recursive%20Ternary_7-Fibonacci%20Search_14.png)
+
 #### Tamanho x Tempo
-[!Alt Fibonacci x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_13.png)
-[!Alt Fibonacci x Recursive Ternary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/6-Recursive%20Ternary_7-Fibonacci%20Search_13.png)
+
+[Fibonacci x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_7-Fibonacci%20Search_13.png)
+
+[Fibonacci x Recursive Ternary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/6-Recursive%20Ternary_7-Fibonacci%20Search_13.png)
 
 ### Recursivos x Jump Search
 #### Tamanho x Iterações
-[!Alt Jump Search x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_4-Jump%20Search_14.png)
-[!Alt Jump Search x Recursive Ternary](./pi/versus/4-Jump%20Search_6-Recursive%20Ternary_14.png)
+[Jump Search x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_4-Jump%20Search_14.png)
+
+[Jump Search x Recursive Ternary](./pi/versus/4-Jump%20Search_6-Recursive%20Ternary_14.png)
 
 #### Tamanho x Tempo
-[!Alt Jump Search x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_4-Jump%20Search_13.png)
-[!Alt Jump Search x Recursive Ternary](./pi/versus/4-Jump%20Search_6-Recursive%20Ternary_13.png)
+[Jump Search x Recursive Binary](https://github.com/ozielalves/Analise_empirica/blob/master/pi/versus/3-Recursive%20Binary_4-Jump%20Search_13.png)
+
+[Jump Search x Recursive Ternary](./pi/versus/4-Jump%20Search_6-Recursive%20Ternary_13.png)
 
 ## Condições de Testes
 ### Informações sobre a maquina utilizada
